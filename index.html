@@ -471,3 +471,143 @@ footer {
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OneHub - Tasks</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+}
+
+.box {
+  max-width: 600px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add {
+  background: #111827;
+  color: white;
+}
+
+li {
+  background: white;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.delete {
+  background: #eee;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>📅 OneHub Tasks</h1>
+
+<input id="taskInput" placeholder="नया Task लिखें...">
+<button class="add" onclick="addTask()">Add</button>
+
+<ul id="taskList"></ul>
+
+</div>
+
+<script>
+let tasks = JSON.parse(localStorage.getItem("onehubTasks")) || [];
+
+function saveTasks() {
+  localStorage.setItem("onehubTasks", JSON.stringify(tasks));
+}
+
+function showTasks() {
+  const list = document.getElementById("taskList");
+  list.innerHTML = "";
+
+  tasks.forEach((task, index) => {
+    const li = document.createElement("li");
+
+    li.innerHTML = `
+      <span class="${task.done ? 'done' : ''}"
+      onclick="completeTask(${index})">
+      ${task.text}
+      </span>
+
+      <button class="delete" onclick="deleteTask(${index})">
+      🗑️
+      </button>
+    `;
+
+    list.appendChild(li);
+  });
+}
+
+function addTask() {
+  const input = document.getElementById("taskInput");
+  const text = input.value.trim();
+
+  if (text === "") return;
+
+  tasks.push({
+    text: text,
+    done: false
+  });
+
+  input.value = "";
+  saveTasks();
+  showTasks();
+}
+
+function completeTask(index) {
+  tasks[index].done = !tasks[index].done;
+  saveTasks();
+  showTasks();
+}
+
+function deleteTask(index) {
+  tasks.splice(index, 1);
+  saveTasks();
+  showTasks();
+}
+
+showTasks();
+</script>
+
+</body>
+</html>
