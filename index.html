@@ -329,3 +329,145 @@ function likePost(button){
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OneHub - Everything in One Place</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+  color: #222;
+}
+
+header {
+  background: #111827;
+  color: white;
+  padding: 22px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 30px;
+}
+
+header p {
+  margin-top: 6px;
+  color: #d1d5db;
+}
+
+.container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.search {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+
+.card h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #666;
+  font-size: 14px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #777;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🚀 OneHub</h1>
+  <p>Everything in One Place</p>
+</header>
+
+<div class="container">
+
+  <input class="search" type="text" placeholder="🔍 Search tools...">
+
+  <div class="grid">
+
+    <div class="card">
+      <h2>💬 Chat</h2>
+      <p>Chat & Messages</p>
+    </div>
+
+    <div class="card">
+      <h2>📝 Notes</h2>
+      <p>Save your notes</p>
+    </div>
+
+    <div class="card">
+      <h2>📅 Tasks</h2>
+      <p>Manage your tasks</p>
+    </div>
+
+    <div class="card">
+      <h2>🧮 Calculator</h2>
+      <p>Quick calculations</p>
+    </div>
+
+    <div class="card">
+      <h2>🌐 Web</h2>
+      <p>Useful websites</p>
+    </div>
+
+    <div class="card">
+      <h2>⚙️ Settings</h2>
+      <p>App settings</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 OneHub
+</footer>
+
+</body>
+</html>
