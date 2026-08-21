@@ -956,5 +956,492 @@ document.getElementById("message").innerHTML="";
 
 </script>
 
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OneHub India</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f5f7fb;
+  color:#111827;
+}
+
+header{
+  background:#111827;
+  color:white;
+  padding:16px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:bold;
+}
+
+.logo span{
+  color:#00c853;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:15px;
+  font-size:14px;
+}
+
+.hero{
+  background:linear-gradient(135deg,#111827,#2563eb);
+  color:white;
+  text-align:center;
+  padding:55px 20px;
+}
+
+.hero h1{
+  font-size:40px;
+  margin-bottom:12px;
+}
+
+.hero p{
+  margin-bottom:25px;
+}
+
+.search{
+  width:100%;
+  max-width:600px;
+  padding:16px 20px;
+  border:0;
+  border-radius:30px;
+  font-size:16px;
+  outline:none;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:35px 20px;
+}
+
+.section{
+  margin-bottom:45px;
+}
+
+.section h2{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:white;
+  padding:24px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.icon{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.card h3{
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#666;
+  font-size:14px;
+  margin-bottom:16px;
+}
+
+.btn{
+  display:inline-block;
+  background:#2563eb;
+  color:white;
+  border:0;
+  padding:10px 20px;
+  border-radius:22px;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+.btn:hover{
+  background:#1d4ed8;
+}
+
+.tag{
+  display:inline-block;
+  background:#eee;
+  padding:5px 9px;
+  border-radius:15px;
+  font-size:12px;
+  margin-bottom:12px;
+}
+
+#message{
+  text-align:center;
+  margin:20px 0;
+  font-weight:bold;
+}
+
+footer{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:25px;
+  line-height:1.8;
+}
+
+@media(max-width:700px){
+
+nav{
+  display:none;
+}
+
+.hero h1{
+  font-size:32px;
+}
+
+.cards{
+  grid-template-columns:1fr;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+One<span>Hub</span> 🇮🇳
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#jobs">Jobs</a>
+<a href="#ai">AI Tools</a>
+<a href="#business">Business</a>
+</nav>
+
+</header>
+
+
+<section class="hero" id="home">
+
+<h1>OneHub India 🇮🇳</h1>
+
+<p>Everything you need, in one place.</p>
+
+<input
+id="searchBox"
+class="search"
+placeholder="Search Jobs, AI Tools, Business..."
+onkeyup="searchHub()"
+>
+
+</section>
+
+
+<main class="container">
+
+
+<!-- JOBS -->
+
+<section class="section" id="jobs">
+
+<h2>💼 Jobs</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="icon">🔧</div>
+
+<h3>ITI Fitter</h3>
+
+<div class="tag">Manufacturing</div>
+
+<p>Demo job listing • Maharashtra</p>
+
+<button class="btn"
+onclick="showMessage('ITI Fitter selected')">
+View
+</button>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🏭</div>
+
+<h3>Production Operator</h3>
+
+<div class="tag">Automobile</div>
+
+<p>Demo job listing • Maharashtra</p>
+
+<button class="btn"
+onclick="showMessage('Production Operator selected')">
+View
+</button>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">⚙️</div>
+
+<h3>Maintenance Technician</h3>
+
+<div class="tag">Engineering</div>
+
+<p>Demo job listing • Maharashtra</p>
+
+<button class="btn"
+onclick="showMessage('Maintenance Technician selected')">
+View
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- AI TOOLS -->
+
+<section class="section" id="ai">
+
+<h2>🤖 AI Tools</h2>
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="icon">💬</div>
+
+<h3>ChatGPT</h3>
+
+<div class="tag">AI Assistant</div>
+
+<p>AI assistant for learning and ideas.</p>
+
+<a
+class="btn"
+href="https://chatgpt.com/"
+target="_blank">
+Open
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🎨</div>
+
+<h3>Canva</h3>
+
+<div class="tag">Design</div>
+
+<p>Create designs and visual content.</p>
+
+<a
+class="btn"
+href="https://www.canva.com/"
+target="_blank">
+Open
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🔍</div>
+
+<h3>Perplexity</h3>
+
+<div class="tag">Research</div>
+
+<p>AI-powered search and research.</p>
+
+<a
+class="btn"
+href="https://www.perplexity.ai/"
+target="_blank">
+Open
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BUSINESS -->
+
+<section class="section" id="business">
+
+<h2>🏪 Business Hub</h2>
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="icon">🐐</div>
+
+<h3>Goat Farming</h3>
+
+<div class="tag">Rural Business</div>
+
+<p>Explore goat farming as a business idea.</p>
+
+<button
+class="btn"
+onclick="showMessage('Goat Farming selected')">
+Explore
+</button>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🐄</div>
+
+<h3>Dairy Farming</h3>
+
+<div class="tag">Agriculture</div>
+
+<p>Explore dairy and milk business ideas.</p>
+
+<button
+class="btn"
+onclick="showMessage('Dairy Farming selected')">
+Explore
+</button>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">💻</div>
+
+<h3>Online Business</h3>
+
+<div class="tag">Digital</div>
+
+<p>Discover beginner-friendly digital business ideas.</p>
+
+<button
+class="btn"
+onclick="showMessage('Online Business selected')">
+Explore
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<div id="message"></div>
+
+</main>
+
+
+<footer>
+
+<p>© 2026 OneHub India 🇮🇳</p>
+
+<p>One Platform • Many Possibilities</p>
+
+</footer>
+
+
+<script>
+
+function showMessage(text){
+
+document.getElementById("message").innerHTML=
+"✅ "+text;
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
+}
+
+
+function searchHub(){
+
+let search=document
+.getElementById("searchBox")
+.value
+.toLowerCase();
+
+let sections=document
+.querySelectorAll(".section");
+
+if(search===""){
+
+sections.forEach(function(section){
+section.style.display="block";
+});
+
+return;
+
+}
+
+sections.forEach(function(section){
+
+let text=section.innerText.toLowerCase();
+
+if(text.includes(search)){
+
+section.style.display="block";
+
+}else{
+
+section.style.display="none";
+
+}
+
+});
+
+}
+
+</script>
+
 </body>
 </html>
