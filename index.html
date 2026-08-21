@@ -1954,3 +1954,262 @@ if (searchBox) {
   searchBox.addEventListener("input", oneHubSearch);
 }
 </script>
+
+<!-- ONEHUB: CREATORS + LOGO + PROFILE -->
+
+<style>
+
+.onehub-extra{
+  max-width:1100px;
+  margin:35px auto;
+  padding:20px;
+}
+
+
+.onehub-extra h2{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.onehub-extra-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.onehub-extra-card{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.onehub-logo-big{
+  font-size:45px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.onehub-logo-big span{
+  color:#00c853;
+}
+
+.onehub-extra-icon{
+  font-size:45px;
+  margin-bottom:10px;
+}
+
+.onehub-extra-btn{
+  border:0;
+  background:#2563eb;
+  color:white;
+  padding:11px 22px;
+  border-radius:25px;
+  cursor:pointer;
+  margin-top:12px;
+}
+
+.onehub-extra-btn:hover{
+  background:#1d4ed8;
+}
+
+.onehub-profile{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:999;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.onehub-profile-box{
+  background:white;
+  width:100%;
+  max-width:400px;
+  padding:30px;
+  border-radius:22px;
+  text-align:center;
+}
+
+.onehub-avatar{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  background:#2563eb;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:35px;
+  margin:0 auto 15px;
+}
+
+@media(max-width:700px){
+  .onehub-extra-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
+
+<section class="onehub-extra">
+
+<h2>✨ OneHub Community</h2>
+
+<div class="onehub-extra-grid">
+
+
+<!-- LOGO -->
+
+<div class="onehub-extra-card">
+
+<div class="onehub-logo-big">
+One<span>Hub</span>
+</div>
+
+<h3>Official OneHub</h3>
+
+<p>One platform. Many possibilities.</p>
+
+</div>
+
+
+<!-- CREATORS -->
+
+<div class="onehub-extra-card">
+
+<div class="onehub-extra-icon">
+🎨
+</div>
+
+<h3>Creators</h3>
+
+<p>Discover and connect with OneHub creators.</p>
+
+<button
+class="onehub-extra-btn"
+onclick="openCreators()">
+Explore Creators
+</button>
+
+</div>
+
+
+<!-- PROFILE -->
+
+<div class="onehub-extra-card">
+
+<div class="onehub-extra-icon">
+👤
+</div>
+
+<h3>My Profile</h3>
+
+<p>Create and manage your OneHub profile.</p>
+
+<button
+class="onehub-extra-btn"
+onclick="openProfile()">
+Open Profile
+</button>
+
+</div>
+
+
+</div>
+</section>
+
+
+<!-- PROFILE POPUP -->
+
+<div
+id="oneHubProfile"
+class="onehub-profile">
+
+<div class="onehub-profile-box">
+
+<div class="onehub-avatar">
+👤
+</div>
+
+<h2>My OneHub Profile</h2>
+
+<p style="margin-top:10px;">
+Welcome to OneHub 🇮🇳
+</p>
+
+<input
+id="profileName"
+type="text"
+placeholder="Enter your name"
+style="width:100%;padding:12px;margin-top:18px;border:1px solid #ddd;border-radius:10px;"
+>
+
+<button
+class="onehub-extra-btn"
+onclick="saveProfile()">
+Save Profile
+</button>
+
+<button
+class="onehub-extra-btn"
+onclick="closeProfile()"
+style="background:#555;">
+Close
+</button>
+
+<p id="profileMessage" style="margin-top:15px;"></p>
+
+</div>
+</div>
+
+
+<script>
+
+function openProfile(){
+
+document.getElementById("oneHubProfile").style.display="flex";
+
+}
+
+function closeProfile(){
+
+document.getElementById("oneHubProfile").style.display="none";
+
+}
+
+function saveProfile(){
+
+let name=document
+.getElementById("profileName")
+.value
+.trim();
+
+if(name===""){
+
+document.getElementById("profileMessage").innerText=
+"Please enter your name.";
+
+return;
+
+}
+
+localStorage.setItem("oneHubName",name);
+
+document.getElementById("profileMessage").innerText=
+"✅ Profile saved, "+name+"!";
+
+}
+
+function openCreators(){
+
+alert(
+"🎨 OneHub Creators\n\nCreator community is coming soon 🚀"
+);
+
+}
+
+</script>
