@@ -682,3 +682,282 @@ document.getElementById("jobSearch").addEventListener("input", function() {
 </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OneHub India</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+body{background:#f5f7fb;color:#172033;padding-bottom:75px}
+header{background:#111827;color:white;padding:22px 18px;text-align:center}
+header h1{font-size:30px}
+header p{margin-top:6px;color:#d1d5db}
+.container{max-width:900px;margin:auto;padding:18px}
+.search{width:100%;padding:14px;border:1px solid #ddd;border-radius:12px;margin-bottom:18px;font-size:16px}
+.section{display:none}
+.section.active{display:block}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{background:white;padding:20px;border-radius:16px;box-shadow:0 3px 12px #00000012;margin-bottom:14px}
+.card h2{margin-bottom:8px}
+.card p{color:#667085}
+button{border:0;border-radius:9px;padding:11px 15px;background:#111827;color:white;cursor:pointer;margin-top:10px}
+input,textarea,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:9px;margin:7px 0}
+.task{display:flex;justify-content:space-between;align-items:center}
+.done{text-decoration:line-through;opacity:.5}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:white;display:flex;justify-content:space-around;padding:10px;box-shadow:0 -2px 10px #0002}
+.bottom button{background:transparent;color:#111827;margin:0;padding:6px}
+.small{font-size:13px;color:#777}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🚀 OneHub India</h1>
+<p>Everything in One Place 🇮🇳</p>
+</header>
+
+<div class="container">
+
+<!-- HOME -->
+<div id="home" class="section active">
+<input class="search" id="search" placeholder="🔍 OneHub में खोजें...">
+
+<div class="grid">
+<div class="card" onclick="show('jobs')">
+<h2>💼 Jobs</h2>
+<p>India में Jobs खोजें</p>
+</div>
+
+<div class="card" onclick="show('shop')">
+<h2>🛒 Shop</h2>
+<p>Products और Cart</p>
+</div>
+
+<div class="card" onclick="show('ai')">
+<h2>🤖 AI Tools</h2>
+<p>Useful AI Tools</p>
+</div>
+
+<div class="card" onclick="show('social')">
+<h2>📱 Social</h2>
+<p>Posts और Profile</p>
+</div>
+
+<div class="card" onclick="show('tasks')">
+<h2>📅 Tasks</h2>
+<p>अपने काम manage करें</p>
+</div>
+
+<div class="card" onclick="show('profile')">
+<h2>👤 Profile</h2>
+<p>Your OneHub Profile</p>
+</div>
+</div>
+</div>
+
+<!-- JOBS -->
+<div id="jobs" class="section">
+<h2>💼 India Jobs</h2>
+<p class="small">Demo jobs — बाद में live job data जोड़ेंगे।</p>
+
+<input id="jobSearch" placeholder="🔍 Job या शहर खोजें...">
+
+<div class="card job">
+<h2>ITI Fitter</h2>
+<p>📍 Maharashtra, India</p>
+<p>💰 ₹18,000 – ₹25,000</p>
+<button onclick="alert('Apply feature बाद में जोड़ा जाएगा।')">Apply</button>
+</div>
+
+<div class="card job">
+<h2>Machine Operator</h2>
+<p>📍 Pune, Maharashtra</p>
+<p>💰 ₹20,000 – ₹30,000</p>
+<button onclick="alert('Apply feature बाद में जोड़ा जाएगा।')">Apply</button>
+</div>
+
+<div class="card job">
+<h2>Technician</h2>
+<p>📍 Mumbai, Maharashtra</p>
+<p>💰 ₹18,000 – ₹28,000</p>
+<button onclick="alert('Apply feature बाद में जोड़ा जाएगा।')">Apply</button>
+</div>
+</div>
+
+<!-- SHOP -->
+<div id="shop" class="section">
+<h2>🛒 OneHub Shop</h2>
+
+<div class="card">
+<h2>Product 1</h2>
+<p>Useful product</p>
+<p>₹499</p>
+<button onclick="addCart('Product 1')">Add to Cart</button>
+</div>
+
+<div class="card">
+<h2>Product 2</h2>
+<p>Popular product</p>
+<p>₹999</p>
+<button onclick="addCart('Product 2')">Add to Cart</button>
+</div>
+
+<p id="cart">🛒 Cart: 0 items</p>
+</div>
+
+<!-- AI -->
+<div id="ai" class="section">
+<h2>🤖 AI Tools</h2>
+
+<div class="card">
+<h2>💡 Idea Generator</h2>
+<textarea id="idea" placeholder="अपना topic लिखें..."></textarea>
+<button onclick="generateIdea()">Generate</button>
+<p id="ideaResult"></p>
+</div>
+</div>
+
+<!-- SOCIAL -->
+<div id="social" class="section">
+<h2>📱 OneHub Social</h2>
+
+<div class="card">
+<textarea id="postText" placeholder="क्या सोच रहे हो?"></textarea>
+<button onclick="addPost()">Post</button>
+</div>
+
+<div id="posts"></div>
+</div>
+
+<!-- TASKS -->
+<div id="tasks" class="section">
+<h2>📅 My Tasks</h2>
+
+<div class="card">
+<input id="taskInput" placeholder="नया task लिखें...">
+<button onclick="addTask()">Add Task</button>
+</div>
+
+<div id="taskList"></div>
+</div>
+
+<!-- PROFILE -->
+<div id="profile" class="section">
+<h2>👤 My Profile</h2>
+
+<div class="card">
+<input id="name" placeholder="आपका नाम">
+<input id="city" placeholder="आपका शहर">
+<button onclick="saveProfile()">Save Profile</button>
+<p id="profileResult"></p>
+</div>
+</div>
+
+</div>
+
+<div class="bottom">
+<button onclick="show('home')">🏠<br>Home</button>
+<button onclick="show('jobs')">💼<br>Jobs</button>
+<button onclick="show('shop')">🛒<br>Shop</button>
+<button onclick="show('ai')">🤖<br>AI</button>
+<button onclick="show('profile')">👤<br>Profile</button>
+</div>
+
+<script>
+
+function show(id){
+document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+window.scrollTo(0,0);
+}
+
+let cartCount=0;
+
+function addCart(name){
+cartCount++;
+document.getElementById('cart').innerText='🛒 Cart: '+cartCount+' items';
+alert(name+' cart में add हो गया!');
+}
+
+function generateIdea(){
+let text=document.getElementById('idea').value;
+if(!text)return;
+document.getElementById('ideaResult').innerText=
+'💡 आपका idea: '+text+' — इसे और बेहतर बनाने के लिए नए ideas explore करें!';
+}
+
+let tasks=JSON.parse(localStorage.getItem('onehubTasks')||'[]');
+
+function saveTasks(){
+localStorage.setItem('onehubTasks',JSON.stringify(tasks));
+}
+
+function displayTasks(){
+let box=document.getElementById('taskList');
+box.innerHTML='';
+
+tasks.forEach((task,i)=>{
+box.innerHTML+=`
+<div class="card task">
+<span class="${task.done?'done':''}" onclick="toggleTask(${i})">
+${task.text}
+</span>
+<button onclick="deleteTask(${i})">🗑️</button>
+</div>`;
+});
+}
+
+function addTask(){
+let input=document.getElementById('taskInput');
+if(!input.value.trim())return;
+
+tasks.push({text:input.value,done:false});
+input.value='';
+saveTasks();
+displayTasks();
+}
+
+function toggleTask(i){
+tasks[i].done=!tasks[i].done;
+saveTasks();
+displayTasks();
+}
+
+function deleteTask(i){
+tasks.splice(i,1);
+saveTasks();
+displayTasks();
+}
+
+displayTasks();
+
+function addPost(){
+let text=document.getElementById('postText').value;
+if(!text)return;
+
+document.getElementById('posts').innerHTML=
+`<div class="card"><p>📱 ${text}</p></div>`+
+document.getElementById('posts').innerHTML;
+
+document.getElementById('postText').value='';
+}
+
+function saveProfile(){
+let name=document.getElementById('name').value;
+let city=document.getElementById('city').value;
+
+localStorage.setItem('onehubName',name);
+localStorage.setItem('onehubCity',city);
+
+document.getElementById('profileResult').innerText=
+'✅ Profile saved: '+name+' — '+city;
+}
+
+</script>
+
+</body>
+</html>
