@@ -2201,13 +2201,31 @@ document.getElementById("profileMessage").innerText=
 "✅ Profile saved, "+name+"!";
 
 }
-
 function openCreators(){
 
-alert(
-"🎨 OneHub Creators\n\nCreator community is coming soon 🚀"
-);
+const creators = [
+  {
+    name: "Tech Creator",
+    category: "Technology"
+  },
+  {
+    name: "Business Creator",
+    category: "Business"
+  },
+  {
+    name: "AI Creator",
+    category: "Artificial Intelligence"
+  }
+];
+
+let list = "🎨 ONEHUB CREATORS\n\n";
+
+creators.forEach(function(creator, index){
+  list += (index + 1) + ". " +
+  creator.name + " — " +
+  creator.category + "\n";
+});
+
+alert(list);
 
 }
-
-</script>
