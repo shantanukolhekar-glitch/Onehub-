@@ -615,7 +615,70 @@ showTasks();
 <script>
 function openJobs() {
   alert("💼 OneHub Jobs\n\nयहाँ जल्द ही Jobs और Apply का फीचर आएगा!");
+}<div id="jobsPage" style="display:none; padding:20px;">
+  <h1>💼 OneHub Jobs</h1>
+  <p>अपनी पसंद की नौकरी खोजें</p>
+
+  <input
+    id="jobSearch"
+    type="text"
+    placeholder="🔍 Job खोजें..."
+    style="padding:12px; width:100%; margin:15px 0;"
+  >
+
+  <div id="jobList"></div>
+</div>
+
+<script>
+function openJobs() {
+  document.getElementById("jobsPage").style.display = "block";
+  document.getElementById("jobsPage").scrollIntoView();
 }
+
+const jobs = [
+  {
+    title: "ITI Fitter",
+    location: "Maharashtra",
+    salary: "₹18,000 - ₹25,000"
+  },
+  {
+    title: "Machine Operator",
+    location: "Pune",
+    salary: "₹20,000 - ₹30,000"
+  },
+  {
+    title: "Technician",
+    location: "Nashik",
+    salary: "₹18,000 - ₹28,000"
+  }
+];
+
+function showJobs(list) {
+  document.getElementById("jobList").innerHTML = list.map(job => `
+    <div class="card" style="margin:15px 0;">
+      <h2>💼 ${job.title}</h2>
+      <p>📍 ${job.location}</p>
+      <p>💰 ${job.salary}</p>
+      <button onclick="alert('Apply feature जल्द आएगा!')">
+        Apply
+      </button>
+    </div>
+  `).join("");
+}
+
+showJobs(jobs);
+
+document.getElementById("jobSearch").addEventListener("input", function() {
+  const search = this.value.toLowerCase();
+
+  const filtered = jobs.filter(job =>
+    job.title.toLowerCase().includes(search) ||
+    job.location.toLowerCase().includes(search)
+  );
+
+  showJobs(filtered);
+});
+</script>
 </script>
 </body>
 </html>
