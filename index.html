@@ -1929,6 +1929,34 @@ section.style.display="none";
 }
 
 </script>
+<script>
+function oneHubSearch() {
+  const input = document.getElementById("searchBox");
+  if (!input) return;
 
-</body>
-</html>
+  const query = input.value.toLowerCase().trim();
+
+  const sections = document.querySelectorAll(".section");
+
+  if (!query) {
+    sections.forEach(section => {
+      section.style.display = "block";
+    });
+    return;
+  }
+
+  sections.forEach(section => {
+    const text = section.innerText.toLowerCase();
+
+    section.style.display =
+      text.includes(query) ? "block" : "none";
+  });
+}
+
+const searchBox = document.getElementById("searchBox");
+
+if (searchBox) {
+  searchBox.removeAttribute("onkeyup");
+  searchBox.addEventListener("input", oneHubSearch);
+}
+</script>
