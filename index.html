@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OneHub</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+
+body{
+  background:#f4f6f9;
+  color:#111827;
+  padding-bottom:70px;
+}
+
+header{
+  background:#111827;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+
+.logo{
+  font-size:30px;
+  font-weight:bold;
+}
+
+.hero{
+  background:#2563eb;
+  color:white;
+  margin:20px;
+  padding:35px 20px;
+  border-radius:18px;
+  text-align:center;
+}
+
+.hero h1{margin-bottom:10px}
+
+button{
+  background:#2563eb;
+  color:white;
+  border:0;
+  padding:12px 18px;
+  border-radius:8px;
+  font-size:16px;
+  margin-top:10px;
+}
+
+.hero button{
+  background:white;
+  color:#2563eb;
+}
+
+.page{
+  display:none;
+  padding:20px;
+}
+
+.page.active{
+  display:block;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  padding:20px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.card p{color:#555;margin-top:8px}
+
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:1px solid #ccc;
+  border-radius:8px;
+}
+
+textarea{min-height:100px}
+
+.nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:white;
+  display:flex;
+  justify-content:space-around;
+  padding:10px 2px;
+  border-top:1px solid #ddd;
+}
+
+.nav button{
+  background:none;
+  color:#333;
+  font-size:12px;
+  margin:0;
+  padding:5px;
+}
+
+.product{margin-bottom:15px}
+
+.like{
+  background:#e11d48;
+}
+
+.green{
+  background:#16a34a;
+}
+
+#cartCount{
+  font-weight:bold;
+  color:#2563eb;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ONEHUB 🚀</div>
+  <p>Everything in One Place</p>
+</header>
+
+<section id="home" class="page active">
+
+  <div class="hero">
+    <h1>Welcome to OneHub</h1>
+    <p>Jobs, Shop, AI और Social — सब एक ही जगह!</p>
+    <button onclick="showPage('jobs')">Explore</button>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h2>💼 Jobs</h2>
+      <p>नई नौकरी खोजें और Apply करें।</p>
+    </div>
+
+    <div class="card">
+      <h2>🛒 Shop</h2>
+      <p>Products खरीदें और Cart में जोड़ें।</p>
+    </div>
+
+    <div class="card">
+      <h2>🤖 AI Tools</h2>
+      <p>अपने ideas को बेहतर बनाएँ।</p>
+    </div>
+
+    <div class="card">
+      <h2>📱 Social</h2>
+      <p>Post करें और लोगों से Connect हों।</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="jobs" class="page">
+  <h1>💼 Jobs</h1>
+
+  <input id="jobSearch" placeholder="Job search करें..." onkeyup="searchJobs()">
+
+  <div class="card job">
+    <h2>ITI Fitter</h2>
+    <p>📍 Maharashtra | 💰 ₹18,000 - ₹25,000</p>
+    <button class="green" onclick="applyJob()">Apply</button>
+  </div>
+
+  <div class="card job">
+    <h2>Machine Operator</h2>
+    <p>📍 Pune | 💰 ₹20,000 - ₹30,000</p>
+    <button class="green" onclick="applyJob()">Apply</button>
+  </div>
+
+  <div class="card job">
+    <h2>Maintenance Technician</h2>
+    <p>📍 Nashik | 💰 ₹22,000 - ₹32,000</p>
+    <button class="green" onclick="applyJob()">Apply</button>
+  </div>
+</section>
+
+<section id="shop" class="page">
+  <h1>🛒 OneHub Shop</h1>
+  <p>Cart Items: <span id="cartCount">0</span></p>
+
+  <div class="card product">
+    <h2>🎧 Headphones</h2>
+    <p>₹999</p>
+    <button onclick="addCart()">Add to Cart</button>
+  </div>
+
+  <div class="card product">
+    <h2>⌚ Smart Watch</h2>
+    <p>₹1,499</p>
+    <button onclick="addCart()">Add to Cart</button>
+  </div>
+
+  <div class="card product">
+    <h2>🎒 Travel Bag</h2>
+    <p>₹799</p>
+    <button onclick="addCart()">Add to Cart</button>
+  </div>
+</section>
+
+<section id="ai" class="page">
+  <h1>🤖 AI Tools</h1>
+
+  <div class="card">
+    <textarea id="aiInput" placeholder="अपना idea या topic लिखें..."></textarea>
+    <button onclick="generateAI()">Generate</button>
+    <p id="aiResult">AI result यहाँ आएगा।</p>
+  </div>
+</section>
+
+<section id="social" class="page">
+  <h1>📱 OneHub Social</h1>
+
+  <div class="card">
+    <textarea id="postInput" placeholder="आप क्या सोच रहे हैं?"></textarea>
+    <button onclick="createPost()">Post करें</button>
+  </div>
+
+  <div id="feed">
+    <div class="card">
+      <h3>👤 OneHub User</h3>
+      <p>Welcome to OneHub! 🚀</p>
+      <button class="like" onclick="likePost(this)">❤️ Like <span>0</span></button>
+    </div>
+  </div>
+</section>
+
+<section id="profile" class="page">
+  <h1>👤 My Profile</h1>
+
+  <div class="card">
+    <h2>OneHub User</h2>
+    <p>Email: demo@onehub.com</p>
+  </div>
+</section>
+
+<nav class="nav">
+  <button onclick="showPage('home')">🏠<br>Home</button>
+  <button onclick="showPage('jobs')">💼<br>Jobs</button>
+  <button onclick="showPage('shop')">🛒<br>Shop</button>
+  <button onclick="showPage('ai')">🤖<br>AI</button>
+  <button onclick="showPage('social')">📱<br>Social</button>
+  <button onclick="showPage('profile')">👤<br>Profile</button>
+</nav>
+
+<script>
+
+function showPage(id){
+  document.querySelectorAll(".page").forEach(function(page){
+    page.classList.remove("active");
+  });
+  document.getElementById(id).classList.add("active");
+  window.scrollTo(0,0);
+}
+
+function applyJob(){
+  alert("Application demo! जल्द ही पूरा feature आएगा।");
+}
+
+let cart = 0;
+
+function addCart(){
+  cart++;
+  document.getElementById("cartCount").innerText = cart;
+  alert("Product Cart में Add हो गया! 🛒");
+}
+
+function searchJobs(){
+  let text = document.getElementById("jobSearch").value.toLowerCase();
+
+  document.querySelectorAll(".job").forEach(function(job){
+    job.style.display = job.innerText.toLowerCase().includes(text)
+      ? "block"
+      : "none";
+  });
+}
+
+function generateAI(){
+  let text = document.getElementById("aiInput").value.trim();
+
+  if(text === ""){
+    document.getElementById("aiResult").innerText = "पहले अपना topic लिखें।";
+  } else {
+    document.getElementById("aiResult").innerText =
+      "💡 आपका topic: " + text + ". यह अभी OneHub AI Demo है!";
+  }
+}
+
+function createPost(){
+  let text = document.getElementById("postInput").value.trim();
+
+  if(text === ""){
+    alert("पहले कुछ लिखें!");
+    return;
+  }
+
+  let post = document.createElement("div");
+  post.className = "card";
+  post.innerHTML =
+    "<h3>👤 You</h3>" +
+    "<p>" + text + "</p>" +
+    '<button class="like" onclick="likePost(this)">❤️ Like <span>0</span></button>';
+
+  document.getElementById("feed").prepend(post);
+  document.getElementById("postInput").value = "";
+}
+
+function likePost(button){
+  let count = button.querySelector("span");
+  count.innerText = Number(count.innerText) + 1;
+}
+
+</script>
+
+</body>
+</html>
