@@ -1644,7 +1644,44 @@ function showBusiness(type){
     behavior:"smooth"
   });
 }
+function openBusiness(type){
 
+  let title = "";
+  let text = "";
+
+  if(type === "goat"){
+    title = "🐐 Goat Farming";
+    text = "Goat farming business मध्ये breed selection, feeding, housing, health care आणि market planning महत्त्वाचे आहेत.";
+  }
+
+  if(type === "dairy"){
+    title = "🐄 Dairy Farming";
+    text = "Dairy business मध्ये cattle care, feeding, milk production, hygiene आणि market planning महत्त्वाचे आहेत.";
+  }
+
+  if(type === "agriculture"){
+    title = "🌾 Agriculture Business";
+    text = "Agriculture business मध्ये योग्य crop selection, farming planning, water management आणि market research महत्त्वाचे आहेत.";
+  }
+
+  if(type === "online"){
+    title = "💻 Online Business";
+    text = "Online business मध्ये digital services, content creation, freelancing आणि e-commerce सारख्या कल्पना explore करता येतात.";
+  }
+
+  document.getElementById("message").innerHTML =
+    "<div style='background:white;padding:25px;border-radius:18px;max-width:700px;margin:20px auto;box-shadow:0 5px 18px rgba(0,0,0,.08)'>" +
+    "<h2>" + title + "</h2>" +
+    "<p style='margin-top:12px;color:#666;line-height:1.6'>" +
+    text +
+    "</p>" +
+    "</div>";
+
+  document.getElementById("message").scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
 </script>
 
 
