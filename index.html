@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>OneHub India 🇮🇳</title>
 
@@ -26,10 +23,8 @@ html{
 body{
   background:#f5f7fb;
   color:#111827;
-  padding-bottom:0;
+  padding-bottom:75px;
 }
-
-/* HEADER */
 
 header{
   background:#111827;
@@ -59,15 +54,12 @@ nav a{
   font-size:14px;
 }
 
-/* HERO */
-
 .hero{
   background:linear-gradient(135deg,#111827,#2563eb);
   color:white;
   text-align:center;
   padding:60px 20px;
   min-height:330px;
-
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -94,8 +86,6 @@ nav a{
   outline:none;
 }
 
-/* POPULAR */
-
 .popular{
   text-align:center;
   padding:25px 15px;
@@ -104,8 +94,6 @@ nav a{
 .popular h3{
   margin-bottom:15px;
 }
-
-/* CONTAINER */
 
 .container{
   max-width:1150px;
@@ -129,13 +117,9 @@ nav a{
   margin-bottom:28px;
 }
 
-/* CARDS */
-
 .cards{
   display:grid;
-  grid-template-columns:
-  repeat(auto-fit,minmax(220px,1fr));
-
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:18px;
 }
 
@@ -144,12 +128,8 @@ nav a{
   padding:25px;
   border-radius:18px;
   text-align:center;
-
   border:1px solid #e5e7eb;
-
-  box-shadow:
-  0 5px 18px rgba(0,0,0,.08);
-
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
   transition:.3s;
 }
 
@@ -173,26 +153,16 @@ nav a{
   margin-bottom:15px;
 }
 
-/* BUTTON */
-
 .btn{
   display:inline-block;
-
   background:#2563eb;
   color:white;
-
   padding:10px 19px;
-
   border-radius:22px;
-
   text-decoration:none;
-
   border:0;
-
   cursor:pointer;
-
   font-weight:bold;
-
   margin:3px;
 }
 
@@ -204,23 +174,14 @@ nav a{
   background:#00a844;
 }
 
-/* CATEGORY */
-
 .category{
   background:white;
-
   border:2px solid #e5e7eb;
-
   padding:18px;
-
   border-radius:18px;
-
   text-align:center;
-
   cursor:pointer;
-
   font-size:16px;
-
   font-weight:bold;
 }
 
@@ -229,7 +190,48 @@ nav a{
   color:white;
 }
 
-/* MOBILE */
+.tag{
+  display:inline-block;
+  background:#eef2ff;
+  color:#2563eb;
+  padding:6px 10px;
+  border-radius:15px;
+  font-size:12px;
+  margin-bottom:12px;
+}
+
+.ai-category{
+  margin:35px 0 20px;
+  padding:15px 20px;
+  background:#eef2ff;
+  border-left:5px solid #2563eb;
+  border-radius:10px;
+}
+
+.profile-input{
+  width:100%;
+  max-width:350px;
+  padding:13px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  margin:12px 0;
+  font-size:16px;
+}
+
+#message{
+  text-align:center;
+  margin:25px 0;
+  min-height:25px;
+  font-weight:bold;
+}
+
+footer{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:30px 20px;
+  line-height:1.8;
+}
 
 .mobile-nav{
   display:none;
@@ -250,10 +252,6 @@ nav a{
     font-size:32px;
   }
 
-  .hero p{
-    font-size:15px;
-  }
-
   .cards{
     grid-template-columns:1fr;
   }
@@ -264,20 +262,14 @@ nav a{
 
   .mobile-nav{
     display:flex;
-
     position:fixed;
-
     bottom:0;
     left:0;
     right:0;
-
     height:68px;
-
     background:#111827;
-
     justify-content:space-around;
     align-items:center;
-
     z-index:200;
   }
 
@@ -294,10 +286,6 @@ nav a{
     margin-top:3px;
   }
 
-  body{
-    padding-bottom:75px;
-  }
-
 }
 
 </style>
@@ -306,297 +294,120 @@ nav a{
 
 <body>
 
-
-<!-- HEADER -->
-
 <header>
 
   <div class="logo">
-
     One<span>Hub</span> 🇮🇳
-
   </div>
 
   <nav>
-
     <a href="#home">Home</a>
-
     <a href="#jobs">Jobs</a>
-
     <a href="#ai">AI Tools</a>
-
     <a href="#business">Business</a>
-
     <a href="#services">Services</a>
-
     <a href="#profile">Profile</a>
-
   </nav>
 
 </header>
 
+<section class="hero" id="home">
 
-<!-- HERO -->
+  <h1>OneHub India 🇮🇳</h1>
 
-<section
-class="hero"
-id="home">
-
-  <h1>
-    OneHub India 🇮🇳
-  </h1>
-
-  <p>
-    Everything you need, in one place.
-  </p>
+  <p>Everything you need, in one place.</p>
 
   <input
-
     id="searchBox"
-
     class="search"
-
     type="text"
-
-    placeholder=
-    "Search Jobs, AI Tools, Business..."
-
+    placeholder="Search Jobs, AI Tools, Business..."
     onkeyup="searchHub()"
-
   >
 
 </section>
 
-
-<!-- POPULAR SEARCHES -->
-
 <div class="popular">
 
-  <h3>
-    🔥 Popular Searches
-  </h3>
+  <h3>🔥 Popular Searches</h3>
 
-  <a
-    class="btn"
-    href="#jobs">
-
-    💼 Jobs
-
-  </a>
-
-  <a
-    class="btn"
-    href="#ai">
-
-    🤖 AI Tools
-
-  </a>
-
-  <a
-    class="btn"
-    href="#business">
-
-    🏪 Business
-
-  </a>
-
-  <a
-    class="btn"
-    href="#services">
-
-    🇮🇳 Services
-
-  </a>
+  <a class="btn" href="#jobs">💼 Jobs</a>
+  <a class="btn" href="#ai">🤖 AI Tools</a>
+  <a class="btn" href="#business">🏪 Business</a>
+  <a class="btn" href="#services">🇮🇳 Services</a>
 
 </div>
 
-
 <main class="container">
 
-
-<!-- QUICK LINKS -->
-
 <section class="section">
 
-  <h2>
-    ⚡ Quick Links
-  </h2>
+  <h2>⚡ Quick Links</h2>
 
-  <p class="subtitle">
-    Explore OneHub
-  </p>
+  <p class="subtitle">Explore OneHub</p>
 
   <div class="cards">
 
-
     <div class="card">
-
-      <div class="icon">
-        💼
-      </div>
-
-      <h3>
-        Jobs
-      </h3>
-
-      <p>
-        Find government,
-        private and technical jobs.
-      </p>
-
-      <a
-        class="btn"
-        href="#jobs">
-
-        Open
-
-      </a>
-
+      <div class="icon">💼</div>
+      <h3>Jobs</h3>
+      <p>Find government, private and technical jobs.</p>
+      <a class="btn" href="#jobs">Open</a>
     </div>
 
-
     <div class="card">
-
-      <div class="icon">
-        🤖
-      </div>
-
-      <h3>
-        AI Tools
-      </h3>
-
-      <p>
-        Discover useful AI tools
-        in one place.
-      </p>
-
-      <a
-        class="btn"
-        href="#ai">
-
-        Open
-
-      </a>
-
+      <div class="icon">🤖</div>
+      <h3>AI Tools</h3>
+      <p>Discover useful AI tools in one place.</p>
+      <a class="btn" href="#ai">Open</a>
     </div>
 
-
     <div class="card">
-
-      <div class="icon">
-        🏪
-      </div>
-
-      <h3>
-        Business
-      </h3>
-
-      <p>
-        Explore business ideas
-        and opportunities.
-      </p>
-
-      <a
-        class="btn"
-        href="#business">
-
-        Open
-
-      </a>
-
+      <div class="icon">🏪</div>
+      <h3>Business</h3>
+      <p>Explore business ideas and opportunities.</p>
+      <a class="btn" href="#business">Open</a>
     </div>
 
-
     <div class="card">
-
-      <div class="icon">
-        🇮🇳
-      </div>
-
-      <h3>
-        Services
-      </h3>
-
-      <p>
-        Find useful Indian
-        online services.
-      </p>
-
-      <a
-        class="btn"
-        href="#services">
-
-        Open
-
-      </a>
-
+      <div class="icon">🇮🇳</div>
+      <h3>Services</h3>
+      <p>Find useful Indian online services.</p>
+      <a class="btn" href="#services">Open</a>
     </div>
-
 
   </div>
 
 </section>
 
-
-<!-- CATEGORIES -->
-
 <section class="section">
 
-  <h2>
-    📂 Categories
-  </h2>
+  <h2>📂 Categories</h2>
 
-  <p class="subtitle">
-    Choose what you need
-  </p>
+  <p class="subtitle">Choose what you need</p>
 
   <div class="cards">
 
-
-    <button
-      class="category"
-      onclick="go('jobs')">
-
+    <button class="category" onclick="go('jobs')">
       💼 Jobs
-
     </button>
 
-
-    <button
-      class="category"
-      onclick="go('ai')">
-
+    <button class="category" onclick="go('ai')">
       🤖 AI Tools
-
     </button>
 
-
-    <button
-      class="category"
-      onclick="go('business')">
-
+    <button class="category" onclick="go('business')">
       🏪 Business
-
     </button>
 
-
-    <button
-      class="category"
-      onclick="go('services')">
-
+    <button class="category" onclick="go('services')">
       🇮🇳 Services
-
     </button>
-
 
   </div>
 
 </section>
-
-
-<!-- =========================
-     JOBS INDIA
-========================= -->
+<!-- JOBS -->
 
 <section class="section" id="jobs">
 
@@ -612,474 +423,206 @@ id="home">
       <div class="icon">🏛️</div>
       <h3>Government Jobs</h3>
       <p>Search government and public sector jobs.</p>
-      <a class="btn"
-         href="https://www.ncs.gov.in/"
-         target="_blank">
-        Find Jobs
-      </a>
+      <a class="btn" href="https://www.ncs.gov.in/" target="_blank">Find Jobs</a>
     </div>
 
     <div class="card">
       <div class="icon">🏢</div>
       <h3>Private Jobs</h3>
       <p>Find private company job opportunities.</p>
-      <a class="btn"
-         href="https://www.naukri.com/"
-         target="_blank">
-        Find Jobs
-      </a>
+      <a class="btn" href="https://www.naukri.com/" target="_blank">Find Jobs</a>
     </div>
 
     <div class="card">
       <div class="icon">🔧</div>
       <h3>ITI Jobs</h3>
       <p>Fitter, Electrician, Welder and technical jobs.</p>
-      <a class="btn"
-         href="https://www.ncs.gov.in/"
-         target="_blank">
-        Find Jobs
-      </a>
+      <a class="btn" href="https://www.ncs.gov.in/" target="_blank">Find Jobs</a>
     </div>
 
     <div class="card">
       <div class="icon">🎓</div>
       <h3>Fresher Jobs</h3>
       <p>Entry-level opportunities for fresh candidates.</p>
-      <a class="btn"
-         href="https://www.ncs.gov.in/"
-         target="_blank">
-        Find Jobs
-      </a>
+      <a class="btn" href="https://www.ncs.gov.in/" target="_blank">Find Jobs</a>
     </div>
 
     <div class="card">
       <div class="icon">🚆</div>
       <h3>Railway Jobs</h3>
       <p>Official railway recruitment information.</p>
-      <a class="btn"
-         href="https://www.rrbapply.gov.in/"
-         target="_blank">
-        Official Site
-      </a>
+      <a class="btn" href="https://www.rrbapply.gov.in/" target="_blank">Official Site</a>
     </div>
 
     <div class="card">
       <div class="icon">🏦</div>
       <h3>Bank Jobs</h3>
       <p>Explore official banking recruitment information.</p>
-      <a class="btn"
-         href="https://www.ibps.in/"
-         target="_blank">
-        Official Site
-      </a>
+      <a class="btn" href="https://www.ibps.in/" target="_blank">Official Site</a>
     </div>
 
-    <div class="card">
-      <div class="icon">🪖</div>
-      <h3>Defence Jobs</h3>
-      <p>Explore official defence recruitment information.</p>
-      <a class="btn"
-         href="https://joinindianarmy.nic.in/"
-         target="_blank">
-        Official Site
-      </a>
-    </div>
-
-    <div class="card">
-      <div class="icon">📢</div>
-      <h3>Majhi Naukri</h3>
-      <p>Maharashtra and Central Government job updates.</p>
-      <a class="btn"
-         href="https://majhinaukri.in/"
-         target="_blank">
-        Open
-      </a>
-    </div>
-
-  </div>
+  
 
 </section>
 
 
-<!-- =========================
-     AI TOOLS
-========================= -->
+<!-- AI TOOLS -->
 
 <section class="section" id="ai">
 
   <h2>🤖 AI Tools Hub</h2>
 
   <p class="subtitle">
-    Useful AI tools for chat, images, video, coding and research.
+    Useful AI tools for chat, images, video and coding.
   </p>
 
-
-  <!-- AI CHAT -->
-
   <div class="ai-category">
-
     <h3>💬 AI Chat & Assistant</h3>
-
-    <p>
-      Ask questions, learn and get ideas.
-    </p>
-
+    <p>AI assistants for learning and productivity.</p>
   </div>
 
   <div class="cards">
 
-    <div class="card ai-card">
-
+    <div class="card">
       <div class="icon">💬</div>
-
       <h3>ChatGPT</h3>
-
-      <div class="tag">
-        AI Assistant
-      </div>
-
-      <p>
-        AI assistant for learning, ideas and coding.
-      </p>
-
-      <a class="btn"
-         href="https://chatgpt.com/"
-         target="_blank">
-        Open
-      </a>
-
+      <div class="tag">AI Assistant</div>
+      <p>AI assistant for learning, ideas and coding.</p>
+      <a class="btn" href="https://chatgpt.com/" target="_blank">Open</a>
     </div>
 
-
-    <div class="card ai-card">
-
+    <div class="card">
       <div class="icon">✨</div>
-
       <h3>Gemini</h3>
-
-      <div class="tag">
-        AI Assistant
-      </div>
-
-      <p>
-        Google's AI assistant for productivity and ideas.
-      </p>
-
-      <a class="btn"
-         href="https://gemini.google.com/"
-         target="_blank">
-        Open
-      </a>
-
+      <div class="tag">AI Assistant</div>
+      <p>Google's AI assistant for productivity and ideas.</p>
+      <a class="btn" href="https://gemini.google.com/" target="_blank">Open</a>
     </div>
 
-
-    <div class="card ai-card">
-
+    <div class="card">
       <div class="icon">🧠</div>
-
       <h3>Claude</h3>
-
-      <div class="tag">
-        AI Assistant
-      </div>
-
-      <p>
-        Useful for writing, analysis and research.
-      </p>
-
-      <a class="btn"
-         href="https://claude.ai/"
-         target="_blank">
-        Open
-      </a>
-
+      <div class="tag">AI Assistant</div>
+      <p>Useful for writing, analysis and research.</p>
+      <a class="btn" href="https://claude.ai/" target="_blank">Open</a>
     </div>
 
-
-    <div class="card ai-card">
-
+    <div class="card">
       <div class="icon">🔎</div>
-
       <h3>Perplexity</h3>
-
-      <div class="tag">
-        AI Search
-      </div>
-
-      <p>
-        AI-powered search and research assistant.
-      </p>
-
-      <a class="btn"
-         href="https://www.perplexity.ai/"
-         target="_blank">
-        Open
-      </a>
-
+      <div class="tag">AI Search</div>
+      <p>AI-powered search and research assistant.</p>
+      <a class="btn" href="https://www.perplexity.ai/" target="_blank">Open</a>
     </div>
 
   </div>
 
 
-  <!-- AI IMAGE -->
-
   <div class="ai-category">
-
     <h3>🎨 AI Image & Design</h3>
-
-    <p>
-      Create designs and AI-generated images.
-    </p>
-
+    <p>Create designs and AI-generated images.</p>
   </div>
 
   <div class="cards">
 
-    <div class="card ai-card">
-
+    <div class="card">
       <div class="icon">🎨</div>
-
       <h3>Canva</h3>
-
-      <div class="tag">
-        Design
-      </div>
-
-      <p>
-        Create posters, presentations and social designs.
-      </p>
-
-      <a class="btn"
-         href="https://www.canva.com/"
-         target="_blank">
-        Open
-      </a>
-
+      <div class="tag">Design</div>
+      <p>Create posters, presentations and social designs.</p>
+      <a class="btn" href="https://www.canva.com/" target="_blank">Open</a>
     </div>
 
-
-    <div class="card ai-card">
-
+    <div class="card">
       <div class="icon">🖼️</div>
-
       <h3>Leonardo AI</h3>
-
-      <div class="tag">
-        AI Images
-      </div>
-
-      <p>
-        Create AI-generated images and artwork.
-      </p>
-
-      <a class="btn"
-         href="https://leonardo.ai/"
-         target="_blank">
-        Open
-      </a>
-
+      <div class="tag">AI Images</div>
+      <p>Create AI-generated images and artwork.</p>
+      <a class="btn" href="https://leonardo.ai/" target="_blank">Open</a>
     </div>
 
-
-    <div class="card ai-card">
-
+    <div class="card">
       <div class="icon">🌈</div>
-
       <h3>Adobe Firefly</h3>
-
-      <div class="tag">
-        AI Images
-      </div>
-
-      <p>
-        Generate creative images using AI.
-      </p>
-
-      <a class="btn"
-         href="https://firefly.adobe.com/"
-         target="_blank">
-        Open
-      </a>
-
+      <div class="tag">AI Images</div>
+      <p>Generate creative images using AI.</p>
+      <a class="btn" href="https://firefly.adobe.com/" target="_blank">Open</a>
     </div>
 
   </div>
 
 
-  <!-- AI VIDEO -->
-
   <div class="ai-category">
-
     <h3>🎬 AI Video Tools</h3>
-
-    <p>
-      Create and edit videos using AI.
-    </p>
-
+    <p>Create and edit videos using AI.</p>
   </div>
 
   <div class="cards">
 
-    <div class="card ai-card">
-
+    <div class="card">
       <div class="icon">🎥</div>
-
       <h3>CapCut</h3>
-
-      <div class="tag">
-        Video Editing
-      </div>
-
-      <p>
-        Edit videos and create Shorts.
-      </p>
-
-      <a class="btn"
-         href="https://www.capcut.com/"
-         target="_blank">
-        Open
-      </a>
-
+      <div class="tag">Video Editing</div>
+      <p>Edit videos and create Shorts.</p>
+      <a class="btn" href="https://www.capcut.com/" target="_blank">Open</a>
     </div>
 
-
-    <div class="card ai-card">
-
+    <div class="card">
       <div class="icon">🎞️</div>
-
       <h3>Runway</h3>
-
-      <div class="tag">
-        AI Video
-      </div>
-
-      <p>
-        Create and experiment with AI videos.
-      </p>
-
-      <a class="btn"
-         href="https://runwayml.com/"
-         target="_blank">
-        Open
-      </a>
-
+      <div class="tag">AI Video</div>
+      <p>Create and experiment with AI videos.</p>
+      <a class="btn" href="https://runwayml.com/" target="_blank">Open</a>
     </div>
 
-
-    <div class="card ai-card">
-
+    <div class="card">
       <div class="icon">📹</div>
-
       <h3>Pika</h3>
-
-      <div class="tag">
-        AI Video
-      </div>
-
-      <p>
-        Create creative videos using AI.
-      </p>
-
-      <a class="btn"
-         href="https://pika.art/"
-         target="_blank">
-        Open
-      </a>
-
+      <div class="tag">AI Video</div>
+      <p>Create creative videos using AI.</p>
+      <a class="btn" href="https://pika.art/" target="_blank">Open</a>
     </div>
 
   </div>
 
-
-  <!-- AI CODING -->
 
   <div class="ai-category">
-
     <h3>💻 AI Coding Tools</h3>
-
-    <p>
-      Build websites and code faster.
-    </p>
-
+    <p>Build websites and code faster.</p>
   </div>
 
   <div class="cards">
 
-    <div class="card ai-card">
-
+    <div class="card">
       <div class="icon">💻</div>
-
       <h3>GitHub Copilot</h3>
-
-      <div class="tag">
-        Coding
-      </div>
-
-      <p>
-        AI assistance for writing and understanding code.
-      </p>
-
-      <a class="btn"
-         href="https://github.com/features/copilot"
-         target="_blank">
-        Open
-      </a>
-
+      <div class="tag">Coding</div>
+      <p>AI assistance for writing and understanding code.</p>
+      <a class="btn" href="https://github.com/features/copilot" target="_blank">Open</a>
     </div>
 
-
-    <div class="card ai-card">
-
+    <div class="card">
       <div class="icon">⌨️</div>
-
       <h3>Cursor</h3>
-
-      <div class="tag">
-        AI Code Editor
-      </div>
-
-      <p>
-        AI-powered coding environment.
-      </p>
-
-      <a class="btn"
-         href="https://www.cursor.com/"
-         target="_blank">
-        Open
-      </a>
-
+      <div class="tag">AI Code Editor</div>
+      <p>AI-powered coding environment.</p>
+      <a class="btn" href="https://www.cursor.com/" target="_blank">Open</a>
     </div>
 
-
-    <div class="card ai-card">
-
+    <div class="card">
       <div class="icon">⚡</div>
-
       <h3>Replit</h3>
-
-      <div class="tag">
-        Coding
-      </div>
-
-      <p>
-        Build and run coding projects online.
-      </p>
-
-      <a class="btn"
-         href="https://replit.com/"
-         target="_blank">
-        Open
-      </a>
-
+      <div class="tag">Coding</div>
+      <p>Build and run coding projects online.</p>
+      <a class="btn" href="https://replit.com/" target="_blank">Open</a>
     </div>
 
   </div>
 
 </section>
-<!-- =========================
-     BUSINESS HUB
-========================= -->
+
+
+<!-- BUSINESS -->
 
 <section class="section" id="business">
 
@@ -1092,116 +635,53 @@ id="home">
   <div class="cards">
 
     <div class="card">
-
       <div class="icon">🐐</div>
-
       <h3>Goat Farming</h3>
-
-      <div class="tag">
-        Rural Business
-      </div>
-
-      <p>
-        Explore goat farming business ideas,
-        planning and opportunities.
-      </p>
-
-      <button
-        class="btn"
-        onclick="showMessage('Goat Farming selected 🚀')">
-
+      <div class="tag">Rural Business</div>
+      <p>Explore goat farming business opportunities.</p>
+      <button class="btn"
+        onclick="businessDetails('🐐 Goat Farming','Learn about breed selection, feeding, housing, health care and market planning.')">
         Explore
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <div class="icon">🐄</div>
-
       <h3>Dairy Farming</h3>
-
-      <div class="tag">
-        Agriculture
-      </div>
-
-      <p>
-        Explore dairy farming and
-        milk business ideas.
-      </p>
-
-      <button
-        class="btn"
-        onclick="showMessage('Dairy Farming selected 🚀')">
-
+      <div class="tag">Agriculture</div>
+      <p>Explore dairy farming and milk business ideas.</p>
+      <button class="btn"
+        onclick="businessDetails('🐄 Dairy Farming','Learn about cattle care, feeding, milk production, hygiene and market planning.')">
         Explore
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <div class="icon">🌾</div>
-
       <h3>Agriculture Business</h3>
-
-      <div class="tag">
-        Farming
-      </div>
-
-      <p>
-        Discover agriculture-based
-        business opportunities.
-      </p>
-
-      <button
-        class="btn"
-        onclick="showMessage('Agriculture Business selected 🚀')">
-
+      <div class="tag">Farming</div>
+      <p>Discover agriculture-based business opportunities.</p>
+      <button class="btn"
+        onclick="businessDetails('🌾 Agriculture Business','Explore crop selection, farming planning, water management and market research.')">
         Explore
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <div class="icon">💻</div>
-
       <h3>Online Business</h3>
-
-      <div class="tag">
-        Digital
-      </div>
-
-      <p>
-        Discover beginner-friendly
-        online business ideas.
-      </p>
-
-      <button
-        class="btn"
-        onclick="showMessage('Online Business selected 🚀')">
-
+      <div class="tag">Digital</div>
+      <p>Discover beginner-friendly online business ideas.</p>
+      <button class="btn"
+        onclick="businessDetails('💻 Online Business','Explore digital services, content creation, freelancing and e-commerce ideas.')">
         Explore
-
       </button>
-
     </div>
 
   </div>
 
 </section>
-
-
-<!-- =========================
-     INDIA SERVICES
-========================= -->
+<!-- SERVICES -->
 
 <section class="section" id="services">
 
@@ -1213,108 +693,52 @@ id="home">
 
   <div class="cards">
 
-
     <div class="card">
-
       <div class="icon">📄</div>
-
       <h3>Government Documents</h3>
+      <span class="tag">Documents</span>
+      <p>Find important government document services.</p>
 
-      <div class="tag">
-        Documents
-      </div>
-
-      <p>
-        Find information about
-        important government documents.
-      </p>
-
-      <button
-        class="btn"
-        onclick="showMessage('Government Documents selected 📄')">
-
+      <button class="btn"
+        onclick="showMessage('📄 Government Documents selected')">
         Explore
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <div class="icon">🏦</div>
-
       <h3>Government Schemes</h3>
+      <span class="tag">Schemes</span>
+      <p>Explore government schemes and benefits.</p>
 
-      <div class="tag">
-        Schemes
-      </div>
-
-      <p>
-        Explore useful government
-        schemes and benefits.
-      </p>
-
-      <button
-        class="btn"
-        onclick="showMessage('Government Schemes selected 🇮🇳')">
-
+      <button class="btn"
+        onclick="showMessage('🇮🇳 Government Schemes selected')">
         Explore
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <div class="icon">🧾</div>
-
       <h3>Public Services</h3>
+      <span class="tag">Services</span>
+      <p>Find useful public services.</p>
 
-      <div class="tag">
-        Services
-      </div>
-
-      <p>
-        Find useful public and
-        online services.
-      </p>
-
-      <button
-        class="btn"
-        onclick="showMessage('Public Services selected 🚀')">
-
+      <button class="btn"
+        onclick="showMessage('🚀 Public Services selected')">
         Explore
-
       </button>
-
     </div>
 
-
     <div class="card">
-
       <div class="icon">💳</div>
-
       <h3>Online Services</h3>
+      <span class="tag">Online</span>
+      <p>Discover useful online services.</p>
 
-      <div class="tag">
-        Online
-      </div>
-
-      <p>
-        Discover useful online
-        services in one place.
-      </p>
-
-      <button
-        class="btn"
-        onclick="showMessage('Online Services selected 🚀')">
-
+      <button class="btn"
+        onclick="showMessage('💳 Online Services selected')">
         Explore
-
       </button>
-
     </div>
 
   </div>
@@ -1322,9 +746,7 @@ id="home">
 </section>
 
 
-<!-- =========================
-     PROFILE
-========================= -->
+<!-- PROFILE -->
 
 <section class="section" id="profile">
 
@@ -1336,9 +758,7 @@ id="home">
 
   <div class="card">
 
-    <div class="icon">
-      👤
-    </div>
+    <div class="icon">👤</div>
 
     <h3 id="welcomeName">
       Welcome to OneHub
@@ -1360,9 +780,7 @@ id="home">
     <button
       class="btn green"
       onclick="saveProfile()">
-
       Save Profile
-
     </button>
 
   </div>
@@ -1374,13 +792,10 @@ id="home">
 
 <div id="message"></div>
 
-
 </main>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -1395,9 +810,7 @@ id="home">
 </footer>
 
 
-<!-- =========================
-     MOBILE NAV
-========================= -->
+<!-- MOBILE NAV -->
 
 <div class="mobile-nav">
 
@@ -1429,12 +842,9 @@ id="home">
 </div>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
+<!-- JAVASCRIPT -->
 
 <script>
-
 
 /* MESSAGE */
 
@@ -1443,14 +853,10 @@ function showMessage(text){
   document.getElementById("message").innerHTML =
     "✅ " + text;
 
-  window.scrollTo({
-
-    top:document.body.scrollHeight,
-
-    behavior:"smooth"
-
-  });
-
+  document.getElementById("message")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
 }
 
 
@@ -1464,9 +870,7 @@ function go(id){
   if(section){
 
     section.scrollIntoView({
-
       behavior:"smooth"
-
     });
 
   }
@@ -1479,80 +883,58 @@ function go(id){
 function searchHub(){
 
   let search =
-    document
-    .getElementById("searchBox")
+    document.getElementById("searchBox")
     .value
     .toLowerCase()
     .trim();
 
-
   let sections =
-    document.querySelectorAll(
-      ".section"
-    );
-
+    document.querySelectorAll(".section");
 
   if(search === ""){
 
     sections.forEach(function(section){
 
-      section.style.display =
-        "block";
+      section.style.display = "block";
 
     });
 
-    document.getElementById(
-      "message"
-    ).innerHTML = "";
+    document.getElementById("message")
+      .innerHTML = "";
 
     return;
-
   }
 
-
   let found = false;
-
 
   sections.forEach(function(section){
 
     let text =
-      section.innerText
-      .toLowerCase();
-
+      section.innerText.toLowerCase();
 
     if(text.includes(search)){
 
-      section.style.display =
-        "block";
-
+      section.style.display = "block";
       found = true;
 
-    }
+    }else{
 
-    else{
-
-      section.style.display =
-        "none";
+      section.style.display = "none";
 
     }
 
   });
 
-
   if(found){
 
-    document.getElementById(
-      "message"
-    ).innerHTML =
+    document.getElementById("message")
+      .innerHTML =
       "🔎 Results for: " + search;
 
-  }
+  }else{
 
-  else{
-
-    document.getElementById(
-      "message"
-    ).innerHTML =
+    document.getElementById("message")
+      .innerHTML =
       "❌ No matching result found.";
 
   }
@@ -1565,53 +947,43 @@ function searchHub(){
 function saveProfile(){
 
   let name =
-    document
-    .getElementById("nameInput")
+    document.getElementById("nameInput")
     .value
     .trim();
 
-
   if(name === ""){
 
-    document.getElementById(
-      "message"
-    ).innerHTML =
-      "⚠️ Please enter your name.";
+    showMessage(
+      "Please enter your name."
+    );
 
     return;
 
   }
-
 
   localStorage.setItem(
     "oneHubName",
     name
   );
 
-
   document.getElementById(
     "welcomeName"
   ).innerHTML =
     "Welcome, " + name + " 👋";
 
-
-  document.getElementById(
-    "message"
-  ).innerHTML =
-    "✅ Profile saved successfully!";
+  showMessage(
+    "Profile saved successfully!"
+  );
 
 }
 
 
-/* LOAD SAVED PROFILE */
+/* LOAD PROFILE */
 
 window.onload = function(){
 
   let savedName =
-    localStorage.getItem(
-      "oneHubName"
-    );
-
+    localStorage.getItem("oneHubName");
 
   if(savedName){
 
@@ -1625,116 +997,72 @@ window.onload = function(){
     ).value =
       savedName;
 
-   BUSINESS HUB 
+  }
 
-<section class="section" id="business">
-
-  <h2>🏪 Business Hub</h2>
-
-  <p class="section-subtitle">
-    Explore business ideas and opportunities.
-  </p>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon">🐐</div>
-      <h3>Goat Farming</h3>
-      <div class="tag">Rural Business</div>
-
-      <p>
-        Learn basic goat farming business information.
-      </p>
-
-      <button class="btn"
-        onclick="businessDetails(
-        '🐐 Goat Farming',
-        'Goat farming मध्ये breed selection, feeding, housing, health care आणि market planning महत्त्वाचे आहेत.'
-        )">
-        Explore
-      </button>
-    </div>
+};
 
 
-    <div class="card">
-      <div class="icon">🐄</div>
-      <h3>Dairy Farming</h3>
-      <div class="tag">Agriculture</div>
+/* BUSINESS DETAILS */
 
-      <p>
-        Explore basic dairy farming information.
-      </p>
+function businessDetails(title,text){
 
-      <button class="btn"
-        onclick="businessDetails(
-        '🐄 Dairy Farming',
-        'Dairy farming मध्ये cattle care, feeding, milk production, hygiene आणि market planning महत्त्वाचे आहेत.'
-        )">
-        Explore
-      </button>
-    </div>
+  document.getElementById(
+    "message"
+  ).innerHTML =
+
+    "<div style='" +
+    "background:white;" +
+    "padding:25px;" +
+    "border-radius:18px;" +
+    "max-width:700px;" +
+    "margin:20px auto;" +
+    "box-shadow:0 5px 18px rgba(0,0,0,.08)'>" +
+
+    "<div style='font-size:40px'>🚀</div>" +
+
+    "<h2>" +
+    title +
+    "</h2>" +
+
+    "<p style='" +
+    "margin-top:15px;" +
+    "color:#666;" +
+    "line-height:1.7'>" +
+
+    text +
+
+    "</p>" +
+
+    "<button class='btn' " +
+    "onclick='closeBusiness()'>" +
+
+    "← Back" +
+
+    "</button>" +
+
+    "</div>";
+
+  document.getElementById(
+    "message"
+  ).scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
 
 
-    <div class="card">
-      <div class="icon">🌾</div>
-      <h3>Agriculture</h3>
-      <div class="tag">Farming</div>
+/* CLOSE BUSINESS */
 
-      <p>
-        Explore agriculture business ideas.
-      </p>
+function closeBusiness(){
 
-      <button class="btn"
-        onclick="businessDetails(
-        '🌾 Agriculture Business',
-        'Agriculture business मध्ये crop selection, farming planning, water management आणि market research महत्त्वाचे आहेत.'
-        )">
-        Explore
-      </button>
-    </div>
+  document.getElementById(
+    "message"
+  ).innerHTML = "";
 
+}
 
-    <div class="card">
-      <div class="icon">💻</div>
-      <h3>Online Business</h3>
-      <div class="tag">Digital</div>
+</script>
 
-      <p>
-        Explore beginner-friendly online business ideas.
-      </p>
+</body>
 
-      <button class="btn"
-        onclick="businessDetails(
-        '💻 Online Business',
-        'Online business मध्ये digital services, content creation, freelancing आणि e-commerce सारख्या कल्पना आहेत.'
-        )">
-        Explore
-      </button>
-    </div>
-
-  </div>
-
-  <!-- BUSINESS DETAILS -->
-
-  <div id="businessDetails"
-       style="display:none;
-       margin-top:30px;">
-
-    <div class="card">
-
-      <div class="icon">🚀</div>
-
-      <h3 id="businessTitle"></h3>
-
-      <p id="businessText"></p>
-
-      <button class="btn"
-        onclick="closeBusiness()">
-        ← Back
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
+</html>
