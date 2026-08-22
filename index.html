@@ -12,10 +12,6 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
-/* =========================
-   GLOBAL
-========================= */
-
 *{
   margin:0;
   padding:0;
@@ -33,10 +29,7 @@ body{
   padding-bottom:0;
 }
 
-
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
   background:#111827;
@@ -47,7 +40,7 @@ header{
   align-items:center;
   position:sticky;
   top:0;
-  z-index:50;
+  z-index:100;
 }
 
 .logo{
@@ -59,30 +52,22 @@ header{
   color:#00c853;
 }
 
-nav{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:flex-end;
-}
-
 nav a{
   color:white;
   text-decoration:none;
-  margin-left:14px;
+  margin-left:15px;
   font-size:14px;
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
   background:linear-gradient(135deg,#111827,#2563eb);
   color:white;
   text-align:center;
-  padding:55px 20px;
-  min-height:320px;
+  padding:60px 20px;
+  min-height:330px;
+
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -90,7 +75,7 @@ nav a{
 }
 
 .hero h1{
-  font-size:40px;
+  font-size:42px;
   margin-bottom:12px;
 }
 
@@ -101,66 +86,56 @@ nav a{
 
 .search{
   width:100%;
-  max-width:600px;
-  padding:16px 20px;
+  max-width:620px;
+  padding:17px 20px;
   border:0;
   border-radius:30px;
   font-size:16px;
   outline:none;
-  box-shadow:0 5px 20px rgba(0,0,0,.15);
 }
 
+/* POPULAR */
 
-/* =========================
-   POPULAR SEARCHES
-========================= */
-
-.popular-searches{
+.popular{
   text-align:center;
-  padding:25px 20px;
+  padding:25px 15px;
 }
 
-.popular-searches h3{
-  margin-bottom:18px;
+.popular h3{
+  margin-bottom:15px;
 }
 
-
-/* =========================
-   CONTAINER
-========================= */
+/* CONTAINER */
 
 .container{
   max-width:1150px;
   margin:auto;
-  padding:35px 20px;
+  padding:30px 20px;
 }
 
 .section{
-  margin-bottom:55px;
+  margin-bottom:60px;
 }
 
 .section h2{
   text-align:center;
-  margin-bottom:12px;
   font-size:30px;
+  margin-bottom:12px;
 }
 
-.section-subtitle{
+.subtitle{
   text-align:center;
   color:#666;
   margin-bottom:28px;
-  line-height:1.6;
 }
 
-
-/* =========================
-   CARDS
-========================= */
+/* CARDS */
 
 .cards{
   display:grid;
   grid-template-columns:
   repeat(auto-fit,minmax(220px,1fr));
+
   gap:18px;
 }
 
@@ -169,14 +144,17 @@ nav a{
   padding:25px;
   border-radius:18px;
   text-align:center;
+
   border:1px solid #e5e7eb;
-  box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+  box-shadow:
+  0 5px 18px rgba(0,0,0,.08);
+
   transition:.3s;
 }
 
 .card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 12px 28px rgba(0,0,0,.13);
+  transform:translateY(-5px);
 }
 
 .icon{
@@ -186,47 +164,35 @@ nav a{
 
 .card h3{
   margin-bottom:8px;
-  font-size:20px;
 }
 
 .card p{
   color:#666;
   font-size:14px;
-  margin-bottom:16px;
   line-height:1.5;
+  margin-bottom:15px;
 }
 
-
-/* =========================
-   TAG
-========================= */
-
-.tag{
-  display:inline-block;
-  background:#eef2ff;
-  color:#2563eb;
-  padding:6px 11px;
-  border-radius:15px;
-  font-size:12px;
-  margin-bottom:14px;
-}
-
-
-/* =========================
-   BUTTON
-========================= */
+/* BUTTON */
 
 .btn{
   display:inline-block;
+
   background:#2563eb;
   color:white;
-  border:0;
-  padding:10px 20px;
+
+  padding:10px 19px;
+
   border-radius:22px;
-  cursor:pointer;
+
   text-decoration:none;
+
+  border:0;
+
+  cursor:pointer;
+
   font-weight:bold;
-  transition:.2s;
+
   margin:3px;
 }
 
@@ -234,156 +200,40 @@ nav a{
   background:#1d4ed8;
 }
 
-.btn:active{
-  transform:scale(.96);
-}
-
-.btn-green{
+.green{
   background:#00a844;
 }
 
-.btn-green:hover{
-  background:#008c39;
-}
+/* CATEGORY */
 
-
-/* =========================
-   QUICK LINKS
-========================= */
-
-.quick{
-  margin-top:-20px;
-  position:relative;
-  z-index:2;
-}
-
-
-/* =========================
-   CATEGORY
-========================= */
-
-.category-btn{
+.category{
   background:white;
+
   border:2px solid #e5e7eb;
-  padding:15px 18px;
-  border-radius:25px;
+
+  padding:18px;
+
+  border-radius:18px;
+
+  text-align:center;
+
   cursor:pointer;
-  font-size:15px;
-  transition:.2s;
+
+  font-size:16px;
+
   font-weight:bold;
 }
 
-.category-btn:hover{
+.category:hover{
   background:#2563eb;
   color:white;
-  border-color:#2563eb;
 }
 
-
-/* =========================
-   AI CATEGORY TITLE
-========================= */
-
-.ai-category{
-  margin-top:45px;
-  margin-bottom:20px;
-  padding:15px 20px;
-  background:linear-gradient(135deg,#eef2ff,#f8faff);
-  border-left:5px solid #2563eb;
-  border-radius:10px;
-}
-
-.ai-category h3{
-  font-size:21px;
-}
-
-.ai-category p{
-  color:#666;
-  font-size:14px;
-  margin-top:5px;
-}
-
-
-/* =========================
-   AI CARD
-========================= */
-
-.ai-card{
-  position:relative;
-  overflow:hidden;
-}
-
-.ai-card::before{
-  content:"AI";
-  position:absolute;
-  top:12px;
-  right:15px;
-  font-size:11px;
-  font-weight:bold;
-  color:#2563eb;
-  background:#eef2ff;
-  padding:5px 8px;
-  border-radius:10px;
-}
-
-
-/* =========================
-   PROFILE
-========================= */
-
-.profile-input{
-  width:100%;
-  max-width:350px;
-  padding:13px;
-  border:1px solid #ddd;
-  border-radius:10px;
-  margin:12px 0;
-  font-size:16px;
-  outline:none;
-}
-
-.profile-input:focus{
-  border-color:#2563eb;
-}
-
-
-/* =========================
-   MESSAGE
-========================= */
-
-#message{
-  text-align:center;
-  margin:25px 0;
-  font-weight:bold;
-  min-height:25px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-  background:#111827;
-  color:white;
-  text-align:center;
-  padding:30px 20px;
-  line-height:1.8;
-}
-
-
-/* =========================
-   MOBILE NAV
-========================= */
+/* MOBILE */
 
 .mobile-nav{
   display:none;
 }
-
-
-/* =========================
-   MOBILE
-========================= */
 
 @media(max-width:700px){
 
@@ -392,7 +242,7 @@ footer{
   }
 
   .hero{
-    padding:45px 15px 35px;
+    padding:45px 15px;
     min-height:300px;
   }
 
@@ -412,29 +262,30 @@ footer{
     font-size:25px;
   }
 
-  .logo{
-    font-size:23px;
-  }
-
   .mobile-nav{
     display:flex;
+
     position:fixed;
+
     bottom:0;
     left:0;
     right:0;
+
     height:68px;
+
     background:#111827;
+
     justify-content:space-around;
     align-items:center;
-    z-index:100;
-    box-shadow:0 -3px 15px rgba(0,0,0,.2);
+
+    z-index:200;
   }
 
   .mobile-nav a{
     color:white;
     text-decoration:none;
     text-align:center;
-    font-size:18px;
+    font-size:19px;
   }
 
   .mobile-nav span{
@@ -453,87 +304,108 @@ footer{
 
 </head>
 
-
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header>
 
   <div class="logo">
+
     One<span>Hub</span> 🇮🇳
+
   </div>
 
   <nav>
+
     <a href="#home">Home</a>
+
     <a href="#jobs">Jobs</a>
+
     <a href="#ai">AI Tools</a>
+
     <a href="#business">Business</a>
+
     <a href="#services">Services</a>
+
     <a href="#profile">Profile</a>
+
   </nav>
 
 </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section
 class="hero"
 id="home">
 
-  <h1>OneHub India 🇮🇳</h1>
+  <h1>
+    OneHub India 🇮🇳
+  </h1>
 
   <p>
     Everything you need, in one place.
   </p>
 
   <input
+
     id="searchBox"
+
     class="search"
+
     type="text"
-    placeholder="Search Jobs, AI Tools, Business..."
+
+    placeholder=
+    "Search Jobs, AI Tools, Business..."
+
     onkeyup="searchHub()"
+
   >
 
 </section>
 
 
-<!-- =========================
-     POPULAR SEARCHES
-========================= -->
+<!-- POPULAR SEARCHES -->
 
-<div class="popular-searches">
+<div class="popular">
 
-  <h3>🔥 Popular Searches</h3>
+  <h3>
+    🔥 Popular Searches
+  </h3>
 
   <a
     class="btn"
     href="#jobs">
+
     💼 Jobs
+
   </a>
 
   <a
     class="btn"
     href="#ai">
+
     🤖 AI Tools
+
   </a>
 
   <a
     class="btn"
     href="#business">
+
     🏪 Business
+
   </a>
 
   <a
     class="btn"
     href="#services">
+
     🇮🇳 Services
+
   </a>
 
 </div>
@@ -542,31 +414,42 @@ id="home">
 <main class="container">
 
 
-<!-- =========================
-     QUICK LINKS
-========================= -->
+<!-- QUICK LINKS -->
 
-<section class="section quick">
+<section class="section">
 
-  <h2>⚡ Quick Links</h2>
+  <h2>
+    ⚡ Quick Links
+  </h2>
+
+  <p class="subtitle">
+    Explore OneHub
+  </p>
 
   <div class="cards">
 
 
     <div class="card">
 
-      <div class="icon">💼</div>
+      <div class="icon">
+        💼
+      </div>
 
-      <h3>Jobs</h3>
+      <h3>
+        Jobs
+      </h3>
 
       <p>
-        Find jobs across India.
+        Find government,
+        private and technical jobs.
       </p>
 
       <a
         class="btn"
         href="#jobs">
+
         Open
+
       </a>
 
     </div>
@@ -574,18 +457,25 @@ id="home">
 
     <div class="card">
 
-      <div class="icon">🤖</div>
+      <div class="icon">
+        🤖
+      </div>
 
-      <h3>AI Tools</h3>
+      <h3>
+        AI Tools
+      </h3>
 
       <p>
-        Free and useful AI tools.
+        Discover useful AI tools
+        in one place.
       </p>
 
       <a
         class="btn"
         href="#ai">
+
         Open
+
       </a>
 
     </div>
@@ -593,18 +483,25 @@ id="home">
 
     <div class="card">
 
-      <div class="icon">🏪</div>
+      <div class="icon">
+        🏪
+      </div>
 
-      <h3>Business</h3>
+      <h3>
+        Business
+      </h3>
 
       <p>
-        Business ideas and opportunities.
+        Explore business ideas
+        and opportunities.
       </p>
 
       <a
         class="btn"
         href="#business">
+
         Open
+
       </a>
 
     </div>
@@ -612,18 +509,25 @@ id="home">
 
     <div class="card">
 
-      <div class="icon">🇮🇳</div>
+      <div class="icon">
+        🇮🇳
+      </div>
 
-      <h3>Services</h3>
+      <h3>
+        Services
+      </h3>
 
       <p>
-        Useful Indian services.
+        Find useful Indian
+        online services.
       </p>
 
       <a
         class="btn"
         href="#services">
+
         Open
+
       </a>
 
     </div>
@@ -634,24 +538,24 @@ id="home">
 </section>
 
 
-<!-- =========================
-     CATEGORIES
-========================= -->
+<!-- CATEGORIES -->
 
 <section class="section">
 
-  <h2>📂 Categories</h2>
+  <h2>
+    📂 Categories
+  </h2>
 
-  <p class="section-subtitle">
-    Explore everything available on OneHub.
+  <p class="subtitle">
+    Choose what you need
   </p>
 
   <div class="cards">
 
 
     <button
-      class="category-btn"
-      onclick="goToSection('jobs')">
+      class="category"
+      onclick="go('jobs')">
 
       💼 Jobs
 
@@ -659,8 +563,8 @@ id="home">
 
 
     <button
-      class="category-btn"
-      onclick="goToSection('ai')">
+      class="category"
+      onclick="go('ai')">
 
       🤖 AI Tools
 
@@ -668,8 +572,8 @@ id="home">
 
 
     <button
-      class="category-btn"
-      onclick="goToSection('business')">
+      class="category"
+      onclick="go('business')">
 
       🏪 Business
 
@@ -677,8 +581,8 @@ id="home">
 
 
     <button
-      class="category-btn"
-      onclick="goToSection('services')">
+      class="category"
+      onclick="go('services')">
 
       🇮🇳 Services
 
@@ -694,285 +598,102 @@ id="home">
      JOBS INDIA
 ========================= -->
 
-<section
-class="section"
-id="jobs">
+<section class="section" id="jobs">
 
   <h2>🇮🇳 Jobs India</h2>
 
-  <p class="section-subtitle">
-    Government • Private • ITI • Fresher • All India • State Jobs
+  <p class="subtitle">
+    Government • Private • ITI • Fresher • Railway • Bank
   </p>
 
   <div class="cards">
 
-
-    <!-- GOVERNMENT -->
-
     <div class="card">
-
       <div class="icon">🏛️</div>
-
       <h3>Government Jobs</h3>
-
-      <div class="tag">
-        All India
-      </div>
-
-      <p>
-        Search government and public sector opportunities.
-      </p>
-
-      <a
-        class="btn"
-        href="https://www.ncs.gov.in/"
-        target="_blank">
-
+      <p>Search government and public sector jobs.</p>
+      <a class="btn"
+         href="https://www.ncs.gov.in/"
+         target="_blank">
         Find Jobs
-
       </a>
-
     </div>
 
-
-    <!-- PRIVATE -->
-
     <div class="card">
-
       <div class="icon">🏢</div>
-
       <h3>Private Jobs</h3>
-
-      <div class="tag">
-        All India
-      </div>
-
-      <p>
-        Search private and company job opportunities.
-      </p>
-
-      <a
-        class="btn"
-        href="https://www.naukri.com/"
-        target="_blank">
-
+      <p>Find private company job opportunities.</p>
+      <a class="btn"
+         href="https://www.naukri.com/"
+         target="_blank">
         Find Jobs
-
       </a>
-
     </div>
 
-
-    <!-- ITI -->
-
     <div class="card">
-
       <div class="icon">🔧</div>
-
       <h3>ITI Jobs</h3>
-
-      <div class="tag">
-        Technical
-      </div>
-
-      <p>
-        ITI Fitter, Electrician, Welder and technical jobs.
-      </p>
-
-      <a
-        class="btn"
-        href="https://www.ncs.gov.in/"
-        target="_blank">
-
+      <p>Fitter, Electrician, Welder and technical jobs.</p>
+      <a class="btn"
+         href="https://www.ncs.gov.in/"
+         target="_blank">
         Find Jobs
-
       </a>
-
     </div>
 
-
-    <!-- FRESHER -->
-
     <div class="card">
-
       <div class="icon">🎓</div>
-
       <h3>Fresher Jobs</h3>
-
-      <div class="tag">
-        Entry Level
-      </div>
-
-      <p>
-        Opportunities for candidates starting their career.
-      </p>
-
-      <a
-        class="btn"
-        href="https://www.ncs.gov.in/"
-        target="_blank">
-
+      <p>Entry-level opportunities for fresh candidates.</p>
+      <a class="btn"
+         href="https://www.ncs.gov.in/"
+         target="_blank">
         Find Jobs
-
       </a>
-
     </div>
 
-
-    <!-- RAILWAY -->
-
     <div class="card">
-
       <div class="icon">🚆</div>
-
       <h3>Railway Jobs</h3>
-
-      <div class="tag">
-        Government
-      </div>
-
-      <p>
-        Official railway recruitment information.
-      </p>
-
-      <a
-        class="btn"
-        href="https://www.rrbapply.gov.in/"
-        target="_blank">
-
+      <p>Official railway recruitment information.</p>
+      <a class="btn"
+         href="https://www.rrbapply.gov.in/"
+         target="_blank">
         Official Site
-
       </a>
-
     </div>
 
-
-    <!-- BANK -->
-
     <div class="card">
-
       <div class="icon">🏦</div>
-
       <h3>Bank Jobs</h3>
-
-      <div class="tag">
-        Banking
-      </div>
-
-      <p>
-        Explore official banking recruitment information.
-      </p>
-
-      <a
-        class="btn"
-        href="https://www.ibps.in/"
-        target="_blank">
-
+      <p>Explore official banking recruitment information.</p>
+      <a class="btn"
+         href="https://www.ibps.in/"
+         target="_blank">
         Official Site
-
       </a>
-
     </div>
 
-
-    <!-- DEFENCE -->
-
     <div class="card">
-
       <div class="icon">🪖</div>
-
       <h3>Defence Jobs</h3>
-
-      <div class="tag">
-        Government
-      </div>
-
-      <p>
-        Explore official defence recruitment information.
-      </p>
-
-      <a
-        class="btn"
-        href="https://joinindianarmy.nic.in/"
-        target="_blank">
-
+      <p>Explore official defence recruitment information.</p>
+      <a class="btn"
+         href="https://joinindianarmy.nic.in/"
+         target="_blank">
         Official Site
-
       </a>
-
     </div>
 
-
-    <!-- STATE -->
-
     <div class="card">
-
-      <div class="icon">📍</div>
-
-      <h3>State-wise Jobs</h3>
-
-      <div class="tag">
-        India
-      </div>
-
-      <p>
-        Search jobs according to your state.
-      </p>
-
-      <a
-        class="btn"
-        href="https://www.ncs.gov.in/"
-        target="_blank">
-
-        Search Jobs
-
-      </a>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     MAJHI NAUKRI
-========================= -->
-
-<section class="section">
-
-  <h2>📢 Maharashtra Jobs</h2>
-
-  <p class="section-subtitle">
-    Useful job updates for Maharashtra candidates.
-  </p>
-
-  <div class="cards">
-
-    <div class="card">
-
       <div class="icon">📢</div>
-
       <h3>Majhi Naukri</h3>
-
-      <div class="tag">
-        Maharashtra Jobs
-      </div>
-
-      <p>
-        Maharashtra and Central Government job updates.
-      </p>
-
-      <a
-        class="btn"
-        href="https://majhinaukri.in/"
-        target="_blank">
-
+      <p>Maharashtra and Central Government job updates.</p>
+      <a class="btn"
+         href="https://majhinaukri.in/"
+         target="_blank">
         Open
-
       </a>
-
     </div>
 
   </div>
@@ -984,14 +705,12 @@ id="jobs">
      AI TOOLS
 ========================= -->
 
-<section
-class="section"
-id="ai">
+<section class="section" id="ai">
 
   <h2>🤖 AI Tools Hub</h2>
 
-  <p class="section-subtitle">
-    Discover useful AI tools for chat, images, videos, coding, writing, voice and research.
+  <p class="subtitle">
+    Useful AI tools for chat, images, video, coding and research.
   </p>
 
 
@@ -1002,13 +721,12 @@ id="ai">
     <h3>💬 AI Chat & Assistant</h3>
 
     <p>
-      Ask questions, learn, get ideas and solve problems.
+      Ask questions, learn and get ideas.
     </p>
 
   </div>
 
   <div class="cards">
-
 
     <div class="card ai-card">
 
@@ -1021,16 +739,13 @@ id="ai">
       </div>
 
       <p>
-        Learn, write, brainstorm and get coding help.
+        AI assistant for learning, ideas and coding.
       </p>
 
-      <a
-        class="btn"
-        href="https://chatgpt.com/"
-        target="_blank">
-
+      <a class="btn"
+         href="https://chatgpt.com/"
+         target="_blank">
         Open
-
       </a>
 
     </div>
@@ -1047,16 +762,13 @@ id="ai">
       </div>
 
       <p>
-        Google's AI assistant for ideas and productivity.
+        Google's AI assistant for productivity and ideas.
       </p>
 
-      <a
-        class="btn"
-        href="https://gemini.google.com/"
-        target="_blank">
-
+      <a class="btn"
+         href="https://gemini.google.com/"
+         target="_blank">
         Open
-
       </a>
 
     </div>
@@ -1069,20 +781,17 @@ id="ai">
       <h3>Claude</h3>
 
       <div class="tag">
-        Writing & AI
+        AI Assistant
       </div>
 
       <p>
-        Useful for writing, analysis and long conversations.
+        Useful for writing, analysis and research.
       </p>
 
-      <a
-        class="btn"
-        href="https://claude.ai/"
-        target="_blank">
-
+      <a class="btn"
+         href="https://claude.ai/"
+         target="_blank">
         Open
-
       </a>
 
     </div>
@@ -1102,17 +811,13 @@ id="ai">
         AI-powered search and research assistant.
       </p>
 
-      <a
-        class="btn"
-        href="https://www.perplexity.ai/"
-        target="_blank">
-
+      <a class="btn"
+         href="https://www.perplexity.ai/"
+         target="_blank">
         Open
-
       </a>
 
     </div>
-
 
   </div>
 
@@ -1124,13 +829,12 @@ id="ai">
     <h3>🎨 AI Image & Design</h3>
 
     <p>
-      Create designs, posters and AI-generated images.
+      Create designs and AI-generated images.
     </p>
 
   </div>
 
   <div class="cards">
-
 
     <div class="card ai-card">
 
@@ -1143,16 +847,13 @@ id="ai">
       </div>
 
       <p>
-        Create posters, social media designs and presentations.
+        Create posters, presentations and social designs.
       </p>
 
-      <a
-        class="btn"
-        href="https://www.canva.com/"
-        target="_blank">
-
+      <a class="btn"
+         href="https://www.canva.com/"
+         target="_blank">
         Open
-
       </a>
 
     </div>
@@ -1169,16 +870,13 @@ id="ai">
       </div>
 
       <p>
-        Create AI-generated images and visual artwork.
+        Create AI-generated images and artwork.
       </p>
 
-      <a
-        class="btn"
-        href="https://leonardo.ai/"
-        target="_blank">
-
+      <a class="btn"
+         href="https://leonardo.ai/"
+         target="_blank">
         Open
-
       </a>
 
     </div>
@@ -1195,20 +893,16 @@ id="ai">
       </div>
 
       <p>
-        Generate creative images and visual content.
+        Generate creative images using AI.
       </p>
 
-      <a
-        class="btn"
-        href="https://firefly.adobe.com/"
-        target="_blank">
-
+      <a class="btn"
+         href="https://firefly.adobe.com/"
+         target="_blank">
         Open
-
       </a>
 
     </div>
-
 
   </div>
 
@@ -1220,13 +914,12 @@ id="ai">
     <h3>🎬 AI Video Tools</h3>
 
     <p>
-      Create, edit and improve videos using AI.
+      Create and edit videos using AI.
     </p>
 
   </div>
 
   <div class="cards">
-
 
     <div class="card ai-card">
 
@@ -1239,16 +932,13 @@ id="ai">
       </div>
 
       <p>
-        Edit videos, create shorts and use AI editing tools.
+        Edit videos and create Shorts.
       </p>
 
-      <a
-        class="btn"
-        href="https://www.capcut.com/"
-        target="_blank">
-
+      <a class="btn"
+         href="https://www.capcut.com/"
+         target="_blank">
         Open
-
       </a>
 
     </div>
@@ -1265,16 +955,13 @@ id="ai">
       </div>
 
       <p>
-        Create and experiment with AI-generated videos.
+        Create and experiment with AI videos.
       </p>
 
-      <a
-        class="btn"
-        href="https://runwayml.com/"
-        target="_blank">
-
+      <a class="btn"
+         href="https://runwayml.com/"
+         target="_blank">
         Open
-
       </a>
 
     </div>
@@ -1294,17 +981,13 @@ id="ai">
         Create creative videos using AI.
       </p>
 
-      <a
-        class="btn"
-        href="https://pika.art/"
-        target="_blank">
-
+      <a class="btn"
+         href="https://pika.art/"
+         target="_blank">
         Open
-
       </a>
 
     </div>
-
 
   </div>
 
@@ -1316,13 +999,12 @@ id="ai">
     <h3>💻 AI Coding Tools</h3>
 
     <p>
-      Build websites, apps and code faster.
+      Build websites and code faster.
     </p>
 
   </div>
 
   <div class="cards">
-
 
     <div class="card ai-card">
 
@@ -1338,13 +1020,10 @@ id="ai">
         AI assistance for writing and understanding code.
       </p>
 
-      <a
-        class="btn"
-        href="https://github.com/features/copilot"
-        target="_blank">
-
+      <a class="btn"
+         href="https://github.com/features/copilot"
+         target="_blank">
         Open
-
       </a>
 
     </div>
@@ -1361,16 +1040,13 @@ id="ai">
       </div>
 
       <p>
-        AI-powered coding environment for developers.
+        AI-powered coding environment.
       </p>
 
-      <a
-        class="btn"
-        href="https://www.cursor.com/"
-        target="_blank">
-
+      <a class="btn"
+         href="https://www.cursor.com/"
+         target="_blank">
         Open
-
       </a>
 
     </div>
@@ -1390,106 +1066,574 @@ id="ai">
         Build and run coding projects online.
       </p>
 
-      <a
-        class="btn"
-        href="https://replit.com/"
-        target="_blank">
-
+      <a class="btn"
+         href="https://replit.com/"
+         target="_blank">
         Open
-
       </a>
 
     </div>
 
+  </div>
+
+</section>
+<!-- =========================
+     BUSINESS HUB
+========================= -->
+
+<section class="section" id="business">
+
+  <h2>🏪 Business Hub</h2>
+
+  <p class="subtitle">
+    Explore business ideas and opportunities.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <div class="icon">🐐</div>
+
+      <h3>Goat Farming</h3>
+
+      <div class="tag">
+        Rural Business
+      </div>
+
+      <p>
+        Explore goat farming business ideas,
+        planning and opportunities.
+      </p>
+
+      <button
+        class="btn"
+        onclick="showMessage('Goat Farming selected 🚀')">
+
+        Explore
+
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">🐄</div>
+
+      <h3>Dairy Farming</h3>
+
+      <div class="tag">
+        Agriculture
+      </div>
+
+      <p>
+        Explore dairy farming and
+        milk business ideas.
+      </p>
+
+      <button
+        class="btn"
+        onclick="showMessage('Dairy Farming selected 🚀')">
+
+        Explore
+
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">🌾</div>
+
+      <h3>Agriculture Business</h3>
+
+      <div class="tag">
+        Farming
+      </div>
+
+      <p>
+        Discover agriculture-based
+        business opportunities.
+      </p>
+
+      <button
+        class="btn"
+        onclick="showMessage('Agriculture Business selected 🚀')">
+
+        Explore
+
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">💻</div>
+
+      <h3>Online Business</h3>
+
+      <div class="tag">
+        Digital
+      </div>
+
+      <p>
+        Discover beginner-friendly
+        online business ideas.
+      </p>
+
+      <button
+        class="btn"
+        onclick="showMessage('Online Business selected 🚀')">
+
+        Explore
+
+      </button>
+
+    </div>
 
   </div>
 
+</section>
 
-  <!-- AI WRITING -->
 
-  <div class="ai-category">
+<!-- =========================
+     INDIA SERVICES
+========================= -->
 
-    <h3>✍️ AI Writing Tools</h3>
+<section class="section" id="services">
 
-    <p>
-      Write content, improve grammar and generate ideas.
-    </p>
+  <h2>🇮🇳 India Services</h2>
 
-  </div>
+  <p class="subtitle">
+    Useful government and public services.
+  </p>
 
   <div class="cards">
 
 
-    <div class="card ai-card">
+    <div class="card">
 
-      <div class="icon">✍️</div>
+      <div class="icon">📄</div>
 
-      <h3>Grammarly</h3>
+      <h3>Government Documents</h3>
 
       <div class="tag">
-        Writing
+        Documents
       </div>
 
       <p>
-        Improve English writing and grammar.
+        Find information about
+        important government documents.
       </p>
 
-      <a
+      <button
         class="btn"
-        href="https://www.grammarly.com/"
-        target="_blank">
+        onclick="showMessage('Government Documents selected 📄')">
 
-        Open
+        Explore
 
-      </a>
+      </button>
 
     </div>
 
 
-    <div class="card ai-card">
+    <div class="card">
 
-      <div class="icon">📝</div>
+      <div class="icon">🏦</div>
 
-      <h3>Notion AI</h3>
+      <h3>Government Schemes</h3>
 
       <div class="tag">
-        Productivity
+        Schemes
       </div>
 
       <p>
-        Create notes, summaries and written content.
+        Explore useful government
+        schemes and benefits.
       </p>
 
-      <a
+      <button
         class="btn"
-        href="https://www.notion.so/product/ai"
-        target="_blank">
+        onclick="showMessage('Government Schemes selected 🇮🇳')">
 
-        Open
+        Explore
 
-      </a>
+      </button>
 
     </div>
 
+
+    <div class="card">
+
+      <div class="icon">🧾</div>
+
+      <h3>Public Services</h3>
+
+      <div class="tag">
+        Services
+      </div>
+
+      <p>
+        Find useful public and
+        online services.
+      </p>
+
+      <button
+        class="btn"
+        onclick="showMessage('Public Services selected 🚀')">
+
+        Explore
+
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">💳</div>
+
+      <h3>Online Services</h3>
+
+      <div class="tag">
+        Online
+      </div>
+
+      <p>
+        Discover useful online
+        services in one place.
+      </p>
+
+      <button
+        class="btn"
+        onclick="showMessage('Online Services selected 🚀')">
+
+        Explore
+
+      </button>
+
+    </div>
 
   </div>
 
+</section>
 
-  <!-- AI VOICE -->
 
-  <div class="ai-category">
+<!-- =========================
+     PROFILE
+========================= -->
 
-    <h3>🔊 AI Voice & Audio</h3>
+<section class="section" id="profile">
+
+  <h2>👤 My Profile</h2>
+
+  <p class="subtitle">
+    Create your simple OneHub profile.
+  </p>
+
+  <div class="card">
+
+    <div class="icon">
+      👤
+    </div>
+
+    <h3 id="welcomeName">
+      Welcome to OneHub
+    </h3>
 
     <p>
-      Create voiceovers and work with AI audio tools.
+      आपलं नाव टाका:
     </p>
+
+    <input
+      id="nameInput"
+      class="profile-input"
+      type="text"
+      placeholder="Enter your name"
+    >
+
+    <br>
+
+    <button
+      class="btn green"
+      onclick="saveProfile()">
+
+      Save Profile
+
+    </button>
 
   </div>
 
-  <div class="cards">
+</section>
 
 
-    <div class="card ai-card">
+<!-- MESSAGE -->
 
-      <div class="icon">🎙️<
+<div id="message"></div>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <p>
+    © 2026 OneHub India 🇮🇳
+  </p>
+
+  <p>
+    One Platform • Many Possibilities
+  </p>
+
+</footer>
+
+
+<!-- =========================
+     MOBILE NAV
+========================= -->
+
+<div class="mobile-nav">
+
+  <a href="#home">
+    🏠
+    <span>Home</span>
+  </a>
+
+  <a href="#jobs">
+    💼
+    <span>Jobs</span>
+  </a>
+
+  <a href="#ai">
+    🤖
+    <span>AI</span>
+  </a>
+
+  <a href="#business">
+    🏪
+    <span>Business</span>
+  </a>
+
+  <a href="#services">
+    🇮🇳
+    <span>Services</span>
+  </a>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+/* MESSAGE */
+
+function showMessage(text){
+
+  document.getElementById("message").innerHTML =
+    "✅ " + text;
+
+  window.scrollTo({
+
+    top:document.body.scrollHeight,
+
+    behavior:"smooth"
+
+  });
+
+}
+
+
+/* GO TO SECTION */
+
+function go(id){
+
+  let section =
+    document.getElementById(id);
+
+  if(section){
+
+    section.scrollIntoView({
+
+      behavior:"smooth"
+
+    });
+
+  }
+
+}
+
+
+/* SEARCH */
+
+function searchHub(){
+
+  let search =
+    document
+    .getElementById("searchBox")
+    .value
+    .toLowerCase()
+    .trim();
+
+
+  let sections =
+    document.querySelectorAll(
+      ".section"
+    );
+
+
+  if(search === ""){
+
+    sections.forEach(function(section){
+
+      section.style.display =
+        "block";
+
+    });
+
+    document.getElementById(
+      "message"
+    ).innerHTML = "";
+
+    return;
+
+  }
+
+
+  let found = false;
+
+
+  sections.forEach(function(section){
+
+    let text =
+      section.innerText
+      .toLowerCase();
+
+
+    if(text.includes(search)){
+
+      section.style.display =
+        "block";
+
+      found = true;
+
+    }
+
+    else{
+
+      section.style.display =
+        "none";
+
+    }
+
+  });
+
+
+  if(found){
+
+    document.getElementById(
+      "message"
+    ).innerHTML =
+      "🔎 Results for: " + search;
+
+  }
+
+  else{
+
+    document.getElementById(
+      "message"
+    ).innerHTML =
+      "❌ No matching result found.";
+
+  }
+
+}
+
+
+/* PROFILE */
+
+function saveProfile(){
+
+  let name =
+    document
+    .getElementById("nameInput")
+    .value
+    .trim();
+
+
+  if(name === ""){
+
+    document.getElementById(
+      "message"
+    ).innerHTML =
+      "⚠️ Please enter your name.";
+
+    return;
+
+  }
+
+
+  localStorage.setItem(
+    "oneHubName",
+    name
+  );
+
+
+  document.getElementById(
+    "welcomeName"
+  ).innerHTML =
+    "Welcome, " + name + " 👋";
+
+
+  document.getElementById(
+    "message"
+  ).innerHTML =
+    "✅ Profile saved successfully!";
+
+}
+
+
+/* LOAD SAVED PROFILE */
+
+window.onload = function(){
+
+  let savedName =
+    localStorage.getItem(
+      "oneHubName"
+    );
+
+
+  if(savedName){
+
+    document.getElementById(
+      "welcomeName"
+    ).innerHTML =
+      "Welcome, " + savedName + " 👋";
+
+    document.getElementById(
+      "nameInput"
+    ).value =
+      savedName;
+
+  }
+
+};
+
+
+</script>
+
+
+</body>
+
+</html>
+
