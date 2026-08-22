@@ -1,1068 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>OneHub India 🇮🇳</title>
+<title>OneHub Car Racing</title>
 
 <style>
-
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial,sans-serif;
-}
-
-html{
-  scroll-behavior:smooth;
 }
 
 body{
-  background:#f5f7fb;
-  color:#111827;
-  padding-bottom:75px;
+  background:#111;
+  overflow:hidden;
+  font-family:Arial,sans-serif;
+  touch-action:none;
 }
 
-header{
-  background:#111827;
+#game{
+  position:relative;
+  width:100%;
+  height:100vh;
+  max-width:500px;
+  margin:auto;
+  overflow:hidden;
+  background:#555;
+}
+
+/* Road */
+#road{
+  position:absolute;
+  width:70%;
+  height:100%;
+  left:15%;
+  background:#333;
+  border-left:6px solid white;
+  border-right:6px solid white;
+}
+
+/* Road lines */
+.line{
+  position:absolute;
+  width:8px;
+  height:80px;
+  background:white;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+/* Player */
+#player{
+  position:absolute;
+  width:55px;
+  height:95px;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#2196f3;
+  border-radius:12px;
+  border:4px solid white;
+  z-index:5;
+}
+
+/* Wheels */
+#player:before,
+#player:after{
+  content:"";
+  position:absolute;
+  width:10px;
+  height:25px;
+  background:#111;
+  top:15px;
+}
+
+#player:before{
+  left:-8px;
+}
+
+#player:after{
+  right:-8px;
+}
+
+/* Enemy */
+.enemy{
+  position:absolute;
+  width:55px;
+  height:95px;
+  background:#e53935;
+  border-radius:12px;
+  border:4px solid white;
+  z-index:4;
+}
+
+/* Score */
+#score{
+  position:absolute;
+  top:15px;
+  left:15px;
   color:white;
-  padding:16px 20px;
+  font-size:22px;
+  font-weight:bold;
+  z-index:10;
+}
+
+/* Game over */
+#gameOver{
+  display:none;
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.8);
+  color:white;
+  z-index:20;
+  text-align:center;
+  padding-top:35vh;
+}
+
+#gameOver h1{
+  font-size:40px;
+}
+
+button{
+  margin-top:20px;
+  padding:14px 28px;
+  border:0;
+  border-radius:10px;
+  font-size:18px;
+  font-weight:bold;
+  background:#00c853;
+  color:white;
+}
+
+/* Mobile controls */
+.controls{
+  position:absolute;
+  bottom:15px;
+  width:100%;
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:100;
+  padding:0 25px;
+  z-index:15;
 }
 
-.logo{
+.controls button{
+  width:70px;
+  height:55px;
+  margin:0;
+  background:rgba(255,255,255,.25);
+  color:white;
   font-size:25px;
-  font-weight:bold;
 }
-
-.logo span{
-  color:#00c853;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:15px;
-  font-size:14px;
-}
-
-.hero{
-  background:linear-gradient(135deg,#111827,#2563eb);
-  color:white;
-  text-align:center;
-  padding:60px 20px;
-  min-height:330px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-}
-
-.hero h1{
-  font-size:42px;
-  margin-bottom:12px;
-}
-
-.hero p{
-  font-size:17px;
-  margin-bottom:25px;
-}
-
-.search{
-  width:100%;
-  max-width:620px;
-  padding:17px 20px;
-  border:0;
-  border-radius:30px;
-  font-size:16px;
-  outline:none;
-}
-
-.popular{
-  text-align:center;
-  padding:25px 15px;
-}
-
-.popular h3{
-  margin-bottom:15px;
-}
-
-.container{
-  max-width:1150px;
-  margin:auto;
-  padding:30px 20px;
-}
-
-.section{
-  margin-bottom:60px;
-}
-
-.section h2{
-  text-align:center;
-  font-size:30px;
-  margin-bottom:12px;
-}
-
-.subtitle{
-  text-align:center;
-  color:#666;
-  margin-bottom:28px;
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px;
-}
-
-.card{
-  background:white;
-  padding:25px;
-  border-radius:18px;
-  text-align:center;
-  border:1px solid #e5e7eb;
-  box-shadow:0 5px 18px rgba(0,0,0,.08);
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-}
-
-.icon{
-  font-size:42px;
-  margin-bottom:12px;
-}
-
-.card h3{
-  margin-bottom:8px;
-}
-
-.card p{
-  color:#666;
-  font-size:14px;
-  line-height:1.5;
-  margin-bottom:15px;
-}
-
-.btn{
-  display:inline-block;
-  background:#2563eb;
-  color:white;
-  padding:10px 19px;
-  border-radius:22px;
-  text-decoration:none;
-  border:0;
-  cursor:pointer;
-  font-weight:bold;
-  margin:3px;
-}
-
-.btn:hover{
-  background:#1d4ed8;
-}
-
-.green{
-  background:#00a844;
-}
-
-.category{
-  background:white;
-  border:2px solid #e5e7eb;
-  padding:18px;
-  border-radius:18px;
-  text-align:center;
-  cursor:pointer;
-  font-size:16px;
-  font-weight:bold;
-}
-
-.category:hover{
-  background:#2563eb;
-  color:white;
-}
-
-.tag{
-  display:inline-block;
-  background:#eef2ff;
-  color:#2563eb;
-  padding:6px 10px;
-  border-radius:15px;
-  font-size:12px;
-  margin-bottom:12px;
-}
-
-.ai-category{
-  margin:35px 0 20px;
-  padding:15px 20px;
-  background:#eef2ff;
-  border-left:5px solid #2563eb;
-  border-radius:10px;
-}
-
-.profile-input{
-  width:100%;
-  max-width:350px;
-  padding:13px;
-  border:1px solid #ddd;
-  border-radius:10px;
-  margin:12px 0;
-  font-size:16px;
-}
-
-#message{
-  text-align:center;
-  margin:25px 0;
-  min-height:25px;
-  font-weight:bold;
-}
-
-footer{
-  background:#111827;
-  color:white;
-  text-align:center;
-  padding:30px 20px;
-  line-height:1.8;
-}
-
-.mobile-nav{
-  display:none;
-}
-
-@media(max-width:700px){
-
-  nav{
-    display:none;
-  }
-
-  .hero{
-    padding:45px 15px;
-    min-height:300px;
-  }
-
-  .hero h1{
-    font-size:32px;
-  }
-
-  .cards{
-    grid-template-columns:1fr;
-  }
-
-  .section h2{
-    font-size:25px;
-  }
-
-  .mobile-nav{
-    display:flex;
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    height:68px;
-    background:#111827;
-    justify-content:space-around;
-    align-items:center;
-    z-index:200;
-  }
-
-  .mobile-nav a{
-    color:white;
-    text-decoration:none;
-    text-align:center;
-    font-size:19px;
-  }
-
-  .mobile-nav span{
-    display:block;
-    font-size:10px;
-    margin-top:3px;
-  }
-
-}
-
 </style>
-
 </head>
 
 <body>
 
-<header>
+<div id="game">
 
-  <div class="logo">
-    One<span>Hub</span> 🇮🇳
+  <div id="road"></div>
+
+  <div id="score">Score: 0</div>
+
+  <div id="player"></div>
+
+  <div id="gameOver">
+    <h1>GAME OVER 💥</h1>
+    <p id="finalScore"></p>
+    <button onclick="restartGame()">RESTART 🔄</button>
   </div>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#jobs">Jobs</a>
-    <a href="#ai">AI Tools</a>
-    <a href="#business">Business</a>
-    <a href="#services">Services</a>
-    <a href="#profile">Profile</a>
-  </nav>
-
-</header>
-
-<section class="hero" id="home">
-
-  <h1>OneHub India 🇮🇳</h1>
-
-  <p>Everything you need, in one place.</p>
-
-  <input
-    id="searchBox"
-    class="search"
-    type="text"
-    placeholder="Search Jobs, AI Tools, Business..."
-    onkeyup="searchHub()"
-  >
-
-</section>
-
-<div class="popular">
-
-  <h3>🔥 Popular Searches</h3>
-
-  <a class="btn" href="#jobs">💼 Jobs</a>
-  <a class="btn" href="#ai">🤖 AI Tools</a>
-  <a class="btn" href="#business">🏪 Business</a>
-  <a class="btn" href="#services">🇮🇳 Services</a>
+  <div class="controls">
+    <button id="left">⬅️</button>
+    <button id="right">➡️</button>
+  </div>
 
 </div>
-
-<main class="container">
-
-<section class="section">
-
-  <h2>⚡ Quick Links</h2>
-
-  <p class="subtitle">Explore OneHub</p>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon">💼</div>
-      <h3>Jobs</h3>
-      <p>Find government, private and technical jobs.</p>
-      <a class="btn" href="#jobs">Open</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">🤖</div>
-      <h3>AI Tools</h3>
-      <p>Discover useful AI tools in one place.</p>
-      <a class="btn" href="#ai">Open</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">🏪</div>
-      <h3>Business</h3>
-      <p>Explore business ideas and opportunities.</p>
-      <a class="btn" href="#business">Open</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">🇮🇳</div>
-      <h3>Services</h3>
-      <p>Find useful Indian online services.</p>
-      <a class="btn" href="#services">Open</a>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section">
-
-  <h2>📂 Categories</h2>
-
-  <p class="subtitle">Choose what you need</p>
-
-  <div class="cards">
-
-    <button class="category" onclick="go('jobs')">
-      💼 Jobs
-    </button>
-
-    <button class="category" onclick="go('ai')">
-      🤖 AI Tools
-    </button>
-
-    <button class="category" onclick="go('business')">
-      🏪 Business
-    </button>
-
-    <button class="category" onclick="go('services')">
-      🇮🇳 Services
-    </button>
-
-  </div>
-
-</section>
-<!-- JOBS -->
-
-<section class="section" id="jobs">
-
-  <h2>🇮🇳 Jobs India</h2>
-
-  <p class="subtitle">
-    Government • Private • ITI • Fresher • Railway • Bank
-  </p>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon">🏛️</div>
-      <h3>Government Jobs</h3>
-      <p>Search government and public sector jobs.</p>
-      <a class="btn" href="https://www.ncs.gov.in/" target="_blank">Find Jobs</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">🏢</div>
-      <h3>Private Jobs</h3>
-      <p>Find private company job opportunities.</p>
-      <a class="btn" href="https://www.naukri.com/" target="_blank">Find Jobs</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">🔧</div>
-      <h3>ITI Jobs</h3>
-      <p>Fitter, Electrician, Welder and technical jobs.</p>
-      <a class="btn" href="https://www.ncs.gov.in/" target="_blank">Find Jobs</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">🎓</div>
-      <h3>Fresher Jobs</h3>
-      <p>Entry-level opportunities for fresh candidates.</p>
-      <a class="btn" href="https://www.ncs.gov.in/" target="_blank">Find Jobs</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">🚆</div>
-      <h3>Railway Jobs</h3>
-      <p>Official railway recruitment information.</p>
-      <a class="btn" href="https://www.rrbapply.gov.in/" target="_blank">Official Site</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">🏦</div>
-      <h3>Bank Jobs</h3>
-      <p>Explore official banking recruitment information.</p>
-      <a class="btn" href="https://www.ibps.in/" target="_blank">Official Site</a>
-    </div>
-
-  
-
-</section>
-
-
-<!-- AI TOOLS -->
-
-<section class="section" id="ai">
-
-  <h2>🤖 AI Tools Hub</h2>
-
-  <p class="subtitle">
-    Useful AI tools for chat, images, video and coding.
-  </p>
-
-  <div class="ai-category">
-    <h3>💬 AI Chat & Assistant</h3>
-    <p>AI assistants for learning and productivity.</p>
-  </div>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon">💬</div>
-      <h3>ChatGPT</h3>
-      <div class="tag">AI Assistant</div>
-      <p>AI assistant for learning, ideas and coding.</p>
-      <a class="btn" href="https://chatgpt.com/" target="_blank">Open</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">✨</div>
-      <h3>Gemini</h3>
-      <div class="tag">AI Assistant</div>
-      <p>Google's AI assistant for productivity and ideas.</p>
-      <a class="btn" href="https://gemini.google.com/" target="_blank">Open</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">🧠</div>
-      <h3>Claude</h3>
-      <div class="tag">AI Assistant</div>
-      <p>Useful for writing, analysis and research.</p>
-      <a class="btn" href="https://claude.ai/" target="_blank">Open</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">🔎</div>
-      <h3>Perplexity</h3>
-      <div class="tag">AI Search</div>
-      <p>AI-powered search and research assistant.</p>
-      <a class="btn" href="https://www.perplexity.ai/" target="_blank">Open</a>
-    </div>
-
-  </div>
-
-
-  <div class="ai-category">
-    <h3>🎨 AI Image & Design</h3>
-    <p>Create designs and AI-generated images.</p>
-  </div>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon">🎨</div>
-      <h3>Canva</h3>
-      <div class="tag">Design</div>
-      <p>Create posters, presentations and social designs.</p>
-      <a class="btn" href="https://www.canva.com/" target="_blank">Open</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">🖼️</div>
-      <h3>Leonardo AI</h3>
-      <div class="tag">AI Images</div>
-      <p>Create AI-generated images and artwork.</p>
-      <a class="btn" href="https://leonardo.ai/" target="_blank">Open</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">🌈</div>
-      <h3>Adobe Firefly</h3>
-      <div class="tag">AI Images</div>
-      <p>Generate creative images using AI.</p>
-      <a class="btn" href="https://firefly.adobe.com/" target="_blank">Open</a>
-    </div>
-
-  </div>
-
-
-  <div class="ai-category">
-    <h3>🎬 AI Video Tools</h3>
-    <p>Create and edit videos using AI.</p>
-  </div>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon">🎥</div>
-      <h3>CapCut</h3>
-      <div class="tag">Video Editing</div>
-      <p>Edit videos and create Shorts.</p>
-      <a class="btn" href="https://www.capcut.com/" target="_blank">Open</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">🎞️</div>
-      <h3>Runway</h3>
-      <div class="tag">AI Video</div>
-      <p>Create and experiment with AI videos.</p>
-      <a class="btn" href="https://runwayml.com/" target="_blank">Open</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">📹</div>
-      <h3>Pika</h3>
-      <div class="tag">AI Video</div>
-      <p>Create creative videos using AI.</p>
-      <a class="btn" href="https://pika.art/" target="_blank">Open</a>
-    </div>
-
-  </div>
-
-
-  <div class="ai-category">
-    <h3>💻 AI Coding Tools</h3>
-    <p>Build websites and code faster.</p>
-  </div>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon">💻</div>
-      <h3>GitHub Copilot</h3>
-      <div class="tag">Coding</div>
-      <p>AI assistance for writing and understanding code.</p>
-      <a class="btn" href="https://github.com/features/copilot" target="_blank">Open</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">⌨️</div>
-      <h3>Cursor</h3>
-      <div class="tag">AI Code Editor</div>
-      <p>AI-powered coding environment.</p>
-      <a class="btn" href="https://www.cursor.com/" target="_blank">Open</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">⚡</div>
-      <h3>Replit</h3>
-      <div class="tag">Coding</div>
-      <p>Build and run coding projects online.</p>
-      <a class="btn" href="https://replit.com/" target="_blank">Open</a>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- BUSINESS -->
-
-<section class="section" id="business">
-
-  <h2>🏪 Business Hub</h2>
-
-  <p class="subtitle">
-    Explore business ideas and opportunities.
-  </p>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon">🐐</div>
-      <h3>Goat Farming</h3>
-      <div class="tag">Rural Business</div>
-      <p>Explore goat farming business opportunities.</p>
-      <button class="btn"
-        onclick="businessDetails('🐐 Goat Farming','Learn about breed selection, feeding, housing, health care and market planning.')">
-        Explore
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="icon">🐄</div>
-      <h3>Dairy Farming</h3>
-      <div class="tag">Agriculture</div>
-      <p>Explore dairy farming and milk business ideas.</p>
-      <button class="btn"
-        onclick="businessDetails('🐄 Dairy Farming','Learn about cattle care, feeding, milk production, hygiene and market planning.')">
-        Explore
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="icon">🌾</div>
-      <h3>Agriculture Business</h3>
-      <div class="tag">Farming</div>
-      <p>Discover agriculture-based business opportunities.</p>
-      <button class="btn"
-        onclick="businessDetails('🌾 Agriculture Business','Explore crop selection, farming planning, water management and market research.')">
-        Explore
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="icon">💻</div>
-      <h3>Online Business</h3>
-      <div class="tag">Digital</div>
-      <p>Discover beginner-friendly online business ideas.</p>
-      <button class="btn"
-        onclick="businessDetails('💻 Online Business','Explore digital services, content creation, freelancing and e-commerce ideas.')">
-        Explore
-      </button>
-    </div>
-
-  </div>
-
-</section>
-<!-- SERVICES -->
-
-<section class="section" id="services">
-
-  <h2>🇮🇳 India Services</h2>
-
-  <p class="subtitle">
-    Useful government and public services.
-  </p>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon">📄</div>
-      <h3>Government Documents</h3>
-      <span class="tag">Documents</span>
-      <p>Find important government document services.</p>
-
-      <button class="btn"
-        onclick="showMessage('📄 Government Documents selected')">
-        Explore
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="icon">🏦</div>
-      <h3>Government Schemes</h3>
-      <span class="tag">Schemes</span>
-      <p>Explore government schemes and benefits.</p>
-
-      <button class="btn"
-        onclick="showMessage('🇮🇳 Government Schemes selected')">
-        Explore
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="icon">🧾</div>
-      <h3>Public Services</h3>
-      <span class="tag">Services</span>
-      <p>Find useful public services.</p>
-
-      <button class="btn"
-        onclick="showMessage('🚀 Public Services selected')">
-        Explore
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="icon">💳</div>
-      <h3>Online Services</h3>
-      <span class="tag">Online</span>
-      <p>Discover useful online services.</p>
-
-      <button class="btn"
-        onclick="showMessage('💳 Online Services selected')">
-        Explore
-      </button>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PROFILE -->
-
-<section class="section" id="profile">
-
-  <h2>👤 My Profile</h2>
-
-  <p class="subtitle">
-    Create your simple OneHub profile.
-  </p>
-
-  <div class="card">
-
-    <div class="icon">👤</div>
-
-    <h3 id="welcomeName">
-      Welcome to OneHub
-    </h3>
-
-    <p>
-      आपलं नाव टाका:
-    </p>
-
-    <input
-      id="nameInput"
-      class="profile-input"
-      type="text"
-      placeholder="Enter your name"
-    >
-
-    <br>
-
-    <button
-      class="btn green"
-      onclick="saveProfile()">
-      Save Profile
-    </button>
-
-  </div>
-
-</section>
-
-
-<!-- MESSAGE -->
-
-<div id="message"></div>
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-  <p>
-    © 2026 OneHub India 🇮🇳
-  </p>
-
-  <p>
-    One Platform • Many Possibilities
-  </p>
-
-</footer>
-
-
-<!-- MOBILE NAV -->
-
-<div class="mobile-nav">
-
-  <a href="#home">
-    🏠
-    <span>Home</span>
-  </a>
-
-  <a href="#jobs">
-    💼
-    <span>Jobs</span>
-  </a>
-
-  <a href="#ai">
-    🤖
-    <span>AI</span>
-  </a>
-
-  <a href="#business">
-    🏪
-    <span>Business</span>
-  </a>
-
-  <a href="#services">
-    🇮🇳
-    <span>Services</span>
-  </a>
-
-</div>
-
-
-<!-- JAVASCRIPT -->
 
 <script>
 
-/* MESSAGE */
+const game = document.getElementById("game");
+const player = document.getElementById("player");
+const scoreText = document.getElementById("score");
+const gameOver = document.getElementById("gameOver");
+const finalScore = document.getElementById("finalScore");
 
-function showMessage(text){
+let playerX;
+let score = 0;
+let speed = 5;
+let gameRunning = true;
 
-  document.getElementById("message").innerHTML =
-    "✅ " + text;
+let enemies = [];
+let lines = [];
 
-  document.getElementById("message")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
+const road = document.getElementById("road");
+
+/* Create road lines */
+
+for(let i=0;i<6;i++){
+
+  let line=document.createElement("div");
+
+  line.className="line";
+
+  line.style.top=(i*150)+"px";
+
+  road.appendChild(line);
+
+  lines.push(line);
 }
 
+/* Create enemy cars */
 
-/* GO TO SECTION */
+for(let i=0;i<3;i++){
 
-function go(id){
+  let enemy=document.createElement("div");
 
-  let section =
-    document.getElementById(id);
+  enemy.className="enemy";
 
-  if(section){
+  enemy.style.top=(-150-i*250)+"px";
 
-    section.scrollIntoView({
-      behavior:"smooth"
-    });
+  enemy.style.left=
+    (20+Math.random()*55)+"%";
 
-  }
+  game.appendChild(enemy);
 
+  enemies.push(enemy);
 }
 
+/* Player position */
 
-/* SEARCH */
+function resetPlayer(){
 
-function searchHub(){
+  playerX =
+    (game.clientWidth-player.offsetWidth)/2;
 
-  let search =
-    document.getElementById("searchBox")
-    .value
-    .toLowerCase()
-    .trim();
+  player.style.left=playerX+"px";
+}
 
-  let sections =
-    document.querySelectorAll(".section");
+resetPlayer();
 
-  if(search === ""){
+/* Keyboard */
 
-    sections.forEach(function(section){
+document.addEventListener("keydown",(e)=>{
 
-      section.style.display = "block";
-
-    });
-
-    document.getElementById("message")
-      .innerHTML = "";
-
-    return;
+  if(e.key==="ArrowLeft"){
+    moveLeft();
   }
 
-  let found = false;
+  if(e.key==="ArrowRight"){
+    moveRight();
+  }
 
-  sections.forEach(function(section){
+});
 
-    let text =
-      section.innerText.toLowerCase();
+/* Mobile controls */
 
-    if(text.includes(search)){
+document.getElementById("left")
+.addEventListener("touchstart",(e)=>{
+  e.preventDefault();
+  moveLeft();
+});
 
-      section.style.display = "block";
-      found = true;
+document.getElementById("right")
+.addEventListener("touchstart",(e)=>{
+  e.preventDefault();
+  moveRight();
+});
 
-    }else{
+/* Movement */
 
-      section.style.display = "none";
+function moveLeft(){
 
+  if(!gameRunning) return;
+
+  playerX-=35;
+
+  const minX=game.clientWidth*0.15+5;
+
+  if(playerX<minX)
+    playerX=minX;
+
+  player.style.left=playerX+"px";
+}
+
+function moveRight(){
+
+  if(!gameRunning) return;
+
+  playerX+=35;
+
+  const maxX=
+    game.clientWidth*0.85-
+    player.offsetWidth-5;
+
+  if(playerX>maxX)
+    playerX=maxX;
+
+  player.style.left=playerX+"px";
+}
+
+/* Collision */
+
+function collision(a,b){
+
+  const r1=a.getBoundingClientRect();
+  const r2=b.getBoundingClientRect();
+
+  return !(
+    r1.bottom<r2.top ||
+    r1.top>r2.bottom ||
+    r1.right<r2.left ||
+    r1.left>r2.right
+  );
+}
+
+/* Game loop */
+
+function gameLoop(){
+
+  if(!gameRunning) return;
+
+  /* Road lines */
+
+  lines.forEach(line=>{
+
+    let top=parseInt(line.style.top);
+
+    top+=speed;
+
+    if(top>game.clientHeight)
+      top=-100;
+
+    line.style.top=top+"px";
+  });
+
+  /* Enemy cars */
+
+  enemies.forEach(enemy=>{
+
+    let top=enemy.offsetTop;
+
+    top+=speed;
+
+    if(top>game.clientHeight){
+
+      top=-150;
+
+      enemy.style.left=
+        (20+Math.random()*55)+"%";
+
+      score++;
+
+      scoreText.innerText=
+        "Score: "+score;
+
+      if(score%5===0)
+        speed+=0.5;
+    }
+
+    enemy.style.top=top+"px";
+
+    if(collision(player,enemy)){
+      endGame();
     }
 
   });
 
-  if(found){
-
-    document.getElementById("message")
-      .innerHTML =
-      "🔎 Results for: " + search;
-
-  }else{
-
-    document.getElementById("message")
-      .innerHTML =
-      "❌ No matching result found.";
-
-  }
-
+  requestAnimationFrame(gameLoop);
 }
 
+/* Game over */
 
-/* PROFILE */
+function endGame(){
 
-function saveProfile(){
+  gameRunning=false;
 
-  let name =
-    document.getElementById("nameInput")
-    .value
-    .trim();
+  finalScore.innerText=
+    "Your Score: "+score;
 
-  if(name === ""){
-
-    showMessage(
-      "Please enter your name."
-    );
-
-    return;
-
-  }
-
-  localStorage.setItem(
-    "oneHubName",
-    name
-  );
-
-  document.getElementById(
-    "welcomeName"
-  ).innerHTML =
-    "Welcome, " + name + " 👋";
-
-  showMessage(
-    "Profile saved successfully!"
-  );
-
+  gameOver.style.display="block";
 }
 
+/* Restart */
 
-/* LOAD PROFILE */
+function restartGame(){
 
-window.onload = function(){
+  score=0;
 
-  let savedName =
-    localStorage.getItem("oneHubName");
+  speed=5;
 
-  if(savedName){
+  scoreText.innerText="Score: 0";
 
-    document.getElementById(
-      "welcomeName"
-    ).innerHTML =
-      "Welcome, " + savedName + " 👋";
+  gameOver.style.display="none";
 
-    document.getElementById(
-      "nameInput"
-    ).value =
-      savedName;
+  enemies.forEach((enemy,i)=>{
 
-  }
+    enemy.style.top=(-150-i*250)+"px";
 
-};
-
-
-/* BUSINESS DETAILS */
-
-function businessDetails(title,text){
-
-  document.getElementById(
-    "message"
-  ).innerHTML =
-
-    "<div style='" +
-    "background:white;" +
-    "padding:25px;" +
-    "border-radius:18px;" +
-    "max-width:700px;" +
-    "margin:20px auto;" +
-    "box-shadow:0 5px 18px rgba(0,0,0,.08)'>" +
-
-    "<div style='font-size:40px'>🚀</div>" +
-
-    "<h2>" +
-    title +
-    "</h2>" +
-
-    "<p style='" +
-    "margin-top:15px;" +
-    "color:#666;" +
-    "line-height:1.7'>" +
-
-    text +
-
-    "</p>" +
-
-    "<button class='btn' " +
-    "onclick='closeBusiness()'>" +
-
-    "← Back" +
-
-    "</button>" +
-
-    "</div>";
-
-  document.getElementById(
-    "message"
-  ).scrollIntoView({
-    behavior:"smooth"
   });
 
+  resetPlayer();
+
+  gameRunning=true;
+
+  gameLoop();
 }
 
-
-/* CLOSE BUSINESS */
-
-function closeBusiness(){
-
-  document.getElementById(
-    "message"
-  ).innerHTML = "";
-
-}
+gameLoop();
 
 </script>
 
 </body>
-
 </html>
