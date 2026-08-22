@@ -1628,7 +1628,22 @@ window.onload = function(){
   }
 
 };
+function showBusiness(type){
 
+  let data = {
+    goat: "🐐 Goat Farming — setup, feeding आणि basic business planning.",
+    dairy: "🐄 Dairy Farming — cattle care, milk business आणि planning.",
+    agriculture: "🌾 Agriculture — farming आणि rural business ideas.",
+    online: "💻 Online Business — beginner-friendly digital business ideas."
+  };
+
+  document.getElementById("message").innerHTML =
+    "🚀 " + data[type];
+
+  document.getElementById("message").scrollIntoView({
+    behavior:"smooth"
+  });
+}
 
 </script>
 
