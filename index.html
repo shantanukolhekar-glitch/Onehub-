@@ -645,7 +645,36 @@ footer{
   </div>
 
 </section>
+<section class="section" id="profile">
 
+  <h2>👤 My Profile</h2>
+
+  <div class="card">
+
+    <div class="icon">👤</div>
+
+    <h3 id="welcomeName">Welcome to OneHub</h3>
+
+    <p>आपलं नाव टाका:</p>
+
+    <input
+      id="nameInput"
+      type="text"
+      placeholder="Enter your name"
+      style="width:100%;max-width:350px;padding:12px;border:1px solid #ddd;border-radius:10px;margin:12px 0;font-size:16px;"
+    >
+
+    <br>
+
+    <button
+      class="btn"
+      onclick="saveProfile()">
+      Save Profile
+    </button>
+
+  </div>
+
+</section>
 
 <div id="message"></div>
 
@@ -655,22 +684,7 @@ footer{
 <footer>
 
   <p>
-    © 2026 OneHub India 🇮🇳
-  </p>
-
-  <p>
-    One Platform • Many Possibilities
-  </p>
-
-</footer>
-
-
-<script>
-
-function showMessage(text){
-
-  document.getElementById("message").innerHTML =
-    "✅ " + text;
+    © 
 
 }
 
@@ -747,7 +761,24 @@ function searchHub(){
   }
 
 }
+function saveProfile(){
 
+  let name = document.getElementById("nameInput").value.trim();
+
+  if(name === ""){
+    document.getElementById("message").innerHTML =
+      "⚠️ Please enter your name.";
+    return;
+  }
+
+  localStorage.setItem("oneHubName", name);
+
+  document.getElementById("welcomeName").innerHTML =
+    "Welcome, " + name + " 👋";
+
+  document.getElementById("message").innerHTML =
+    "✅ Profile saved successfully!";
+}
 </script>
 <div class="mobile-nav">
   <a href="#home">🏠<span>Home</span></a>
