@@ -8,7 +8,6 @@
 
 <style>
 
-/* RESET */
 *{
   margin:0;
   padding:0;
@@ -26,18 +25,15 @@ body{
   padding-bottom:0;
 }
 
-
 /* HEADER */
 
 header{
   background:#111827;
   color:white;
   padding:16px 20px;
-
   display:flex;
   justify-content:space-between;
   align-items:center;
-
   position:sticky;
   top:0;
   z-index:50;
@@ -59,18 +55,14 @@ nav a{
   font-size:14px;
 }
 
-
 /* HERO */
 
 .hero{
   background:linear-gradient(135deg,#111827,#2563eb);
   color:white;
-
   text-align:center;
   padding:55px 20px;
-
   min-height:320px;
-
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -90,16 +82,12 @@ nav a{
 .search{
   width:100%;
   max-width:600px;
-
   padding:16px 20px;
-
   border:0;
   border-radius:30px;
-
   font-size:16px;
   outline:none;
 }
-
 
 /* CONTAINER */
 
@@ -119,39 +107,28 @@ nav a{
   font-size:28px;
 }
 
-
 /* CARDS */
 
 .cards{
   display:grid;
   grid-template-columns:
   repeat(auto-fit,minmax(220px,1fr));
-
   gap:18px;
 }
 
 .card{
   background:white;
-
   padding:25px;
-
   border-radius:18px;
-
   text-align:center;
-
   border:1px solid #e5e7eb;
-
-  box-shadow:
-  0 5px 18px rgba(0,0,0,.08);
-
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
   transition:.3s;
 }
 
 .card:hover{
   transform:translateY(-6px);
-
-  box-shadow:
-  0 10px 25px rgba(0,0,0,.12);
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
 }
 
 .icon{
@@ -170,45 +147,29 @@ nav a{
   margin-bottom:16px;
 }
 
-
 /* TAG */
 
 .tag{
   display:inline-block;
-
   background:#eee;
-
   padding:5px 10px;
-
   border-radius:15px;
-
   font-size:12px;
-
   margin-bottom:14px;
 }
-
 
 /* BUTTON */
 
 .btn{
   display:inline-block;
-
   background:#2563eb;
-
   color:white;
-
   border:0;
-
   padding:10px 20px;
-
   border-radius:22px;
-
   cursor:pointer;
-
   text-decoration:none;
-
   font-weight:bold;
-
   transition:.2s;
 }
 
@@ -220,37 +181,23 @@ nav a{
   transform:scale(.96);
 }
 
-
-/* QUICK LINKS */
+/* QUICK */
 
 .quick{
   margin-top:-20px;
-
   position:relative;
-
   z-index:2;
 }
 
-.quick .card{
-  padding:20px;
-}
-
-
-/* CATEGORIES */
+/* CATEGORY */
 
 .category-btn{
   background:white;
-
   border:2px solid #e5e7eb;
-
   padding:14px 18px;
-
   border-radius:25px;
-
   cursor:pointer;
-
   font-size:15px;
-
   transition:.2s;
 }
 
@@ -259,62 +206,42 @@ nav a{
   color:white;
 }
 
-
 /* PROFILE */
 
 .profile-input{
   width:100%;
-
   max-width:350px;
-
   padding:12px;
-
   border:1px solid #ddd;
-
   border-radius:10px;
-
   margin:12px 0;
-
   font-size:16px;
-
   outline:none;
 }
-
 
 /* MESSAGE */
 
 #message{
   text-align:center;
-
   margin:25px 0;
-
   font-weight:bold;
 }
-
 
 /* FOOTER */
 
 footer{
   background:#111827;
-
   color:white;
-
   text-align:center;
-
   padding:25px;
-
   line-height:1.8;
 }
-
 
 /* MOBILE NAV */
 
 .mobile-nav{
   display:none;
 }
-
-
-/* MOBILE */
 
 @media(max-width:700px){
 
@@ -343,63 +270,42 @@ footer{
     font-size:24px;
   }
 
-  .card{
-    padding:22px 18px;
-  }
-
   .mobile-nav{
     display:flex;
-
     position:fixed;
-
     bottom:0;
     left:0;
     right:0;
-
     height:65px;
-
     background:#111827;
-
     justify-content:space-around;
-
     align-items:center;
-
     z-index:100;
-
-    box-shadow:
-    0 -3px 15px rgba(0,0,0,.2);
+    box-shadow:0 -3px 15px rgba(0,0,0,.2);
   }
 
   .mobile-nav a{
     color:white;
-
     text-decoration:none;
-
     text-align:center;
-
     font-size:20px;
   }
 
   .mobile-nav span{
     display:block;
-
     font-size:11px;
-
     margin-top:3px;
   }
 
   body{
     padding-bottom:70px;
   }
-
 }
 
 </style>
 </head>
 
-
 <body>
-
 
 <!-- HEADER -->
 
@@ -410,19 +316,12 @@ footer{
   </div>
 
   <nav>
-
     <a href="#home">Home</a>
-
     <a href="#jobs">Jobs</a>
-
     <a href="#ai">AI Tools</a>
-
     <a href="#business">Business</a>
-
     <a href="#services">Services</a>
-
     <a href="#profile">Profile</a>
-
   </nav>
 
 </header>
@@ -432,9 +331,7 @@ footer{
 
 <section class="hero" id="home">
 
-  <h1>
-    OneHub India 🇮🇳
-  </h1>
+  <h1>OneHub India 🇮🇳</h1>
 
   <p>
     Everything you need, in one place.
@@ -458,169 +355,76 @@ footer{
 
 <section class="section quick">
 
-  <h2>
-    ⚡ Quick Links
-  </h2>
+  <h2>⚡ Quick Links</h2>
 
   <div class="cards">
 
-
     <div class="card">
-
-      <div class="icon">
-        💼
-      </div>
-
-      <h3>
-        Jobs
-      </h3>
-
-      <p>
-        Find job opportunities.
-      </p>
-
-      <a
-        class="btn"
-        href="#jobs">
-
-        Open
-
-      </a>
-
+      <div class="icon">💼</div>
+      <h3>Jobs</h3>
+      <p>Find jobs across India.</p>
+      <a class="btn" href="#jobs">Open</a>
     </div>
 
-
     <div class="card">
-
-      <div class="icon">
-        🤖
-      </div>
-
-      <h3>
-        AI Tools
-      </h3>
-
-      <p>
-        Useful AI tools.
-      </p>
-
-      <a
-        class="btn"
-        href="#ai">
-
-        Open
-
-      </a>
-
+      <div class="icon">🤖</div>
+      <h3>AI Tools</h3>
+      <p>Useful AI tools.</p>
+      <a class="btn" href="#ai">Open</a>
     </div>
 
-
     <div class="card">
-
-      <div class="icon">
-        🏪
-      </div>
-
-      <h3>
-        Business
-      </h3>
-
-      <p>
-        Business ideas.
-      </p>
-
-      <a
-        class="btn"
-        href="#business">
-
-        Open
-
-      </a>
-
+      <div class="icon">🏪</div>
+      <h3>Business</h3>
+      <p>Business ideas.</p>
+      <a class="btn" href="#business">Open</a>
     </div>
 
-
     <div class="card">
-
-      <div class="icon">
-        🇮🇳
-      </div>
-
-      <h3>
-        Services
-      </h3>
-
-      <p>
-        Useful Indian services.
-      </p>
-
-      <a
-        class="btn"
-        href="#services">
-
-        Open
-
-      </a>
-
+      <div class="icon">🇮🇳</div>
+      <h3>Services</h3>
+      <p>Useful Indian services.</p>
+      <a class="btn" href="#services">Open</a>
     </div>
-
 
   </div>
 
 </section>
-
 
 
 <!-- CATEGORIES -->
 
 <section class="section">
 
-  <h2>
-    📂 Categories
-  </h2>
+  <h2>📂 Categories</h2>
 
   <div class="cards">
 
-
-    <button
-      class="category-btn"
+    <button class="category-btn"
       onclick="goToSection('jobs')">
-
       💼 Jobs
-
     </button>
 
-
-    <button
-      class="category-btn"
+    <button class="category-btn"
       onclick="goToSection('ai')">
-
       🤖 AI Tools
-
     </button>
 
-
-    <button
-      class="category-btn"
+    <button class="category-btn"
       onclick="goToSection('business')">
-
       🏪 Business
-
     </button>
 
-
-    <button
-      class="category-btn"
+    <button class="category-btn"
       onclick="goToSection('services')">
-
       🇮🇳 Services
-
     </button>
-
 
   </div>
 
 </section>
+
+
 <!-- JOBS INDIA -->
 
 <section class="section" id="jobs">
@@ -644,16 +448,15 @@ footer{
       <div class="tag">All India</div>
 
       <p>
-        Explore official government job opportunities.
+        Search government and public sector opportunities.
       </p>
 
-      <button
+      <a
         class="btn"
-        onclick="showMessage('Government Jobs selected 🇮🇳')">
-
-        Explore
-
-      </button>
+        href="https://www.ncs.gov.in/"
+        target="_blank">
+        Find Jobs
+      </a>
 
     </div>
 
@@ -669,16 +472,15 @@ footer{
       <div class="tag">All India</div>
 
       <p>
-        Find private company and industry opportunities.
+        Search private and company job opportunities.
       </p>
 
-      <button
+      <a
         class="btn"
-        onclick="showMessage('Private Jobs selected 🚀')">
-
-        Explore
-
-      </button>
+        href="https://www.ncs.gov.in/"
+        target="_blank">
+        Find Jobs
+      </a>
 
     </div>
 
@@ -694,16 +496,15 @@ footer{
       <div class="tag">Technical</div>
 
       <p>
-        ITI Fitter, Electrician, Welder and other technical jobs.
+        ITI Fitter, Electrician, Welder and technical jobs.
       </p>
 
-      <button
+      <a
         class="btn"
-        onclick="showMessage('ITI Jobs selected 🔧')">
-
-        Explore
-
-      </button>
+        href="https://www.ncs.gov.in/"
+        target="_blank">
+        Find Jobs
+      </a>
 
     </div>
 
@@ -719,16 +520,15 @@ footer{
       <div class="tag">Entry Level</div>
 
       <p>
-        Opportunities for candidates with little or no experience.
+        Opportunities for candidates starting their career.
       </p>
 
-      <button
+      <a
         class="btn"
-        onclick="showMessage('Fresher Jobs selected 🎓')">
-
-        Explore
-
-      </button>
+        href="https://www.ncs.gov.in/"
+        target="_blank">
+        Find Jobs
+      </a>
 
     </div>
 
@@ -744,16 +544,15 @@ footer{
       <div class="tag">Government</div>
 
       <p>
-        Explore official railway recruitment information.
+        Official railway recruitment information.
       </p>
 
-      <button
+      <a
         class="btn"
-        onclick="showMessage('Railway Jobs selected 🚆')">
-
-        Explore
-
-      </button>
+        href="https://www.rrbapply.gov.in/"
+        target="_blank">
+        Official Site
+      </a>
 
     </div>
 
@@ -766,19 +565,18 @@ footer{
 
       <h3>Bank Jobs</h3>
 
-      <div class="tag">Government / Banking</div>
+      <div class="tag">Banking</div>
 
       <p>
-        Explore banking recruitment opportunities.
+        Explore official banking recruitment information.
       </p>
 
-      <button
+      <a
         class="btn"
-        onclick="showMessage('Bank Jobs selected 🏦')">
-
-        Explore
-
-      </button>
+        href="https://www.ibps.in/"
+        target="_blank">
+        Official Site
+      </a>
 
     </div>
 
@@ -797,18 +595,17 @@ footer{
         Explore official defence recruitment information.
       </p>
 
-      <button
+      <a
         class="btn"
-        onclick="showMessage('Defence Jobs selected 🪖')">
-
-        Explore
-
-      </button>
+        href="https://joinindianarmy.nic.in/"
+        target="_blank">
+        Official Site
+      </a>
 
     </div>
 
 
-    <!-- STATE JOBS -->
+    <!-- STATE -->
 
     <div class="card">
 
@@ -816,19 +613,18 @@ footer{
 
       <h3>State-wise Jobs</h3>
 
-      <div class="tag">28 States + 8 UTs</div>
+      <div class="tag">India</div>
 
       <p>
-        Find job opportunities according to your state.
+        Search jobs according to your state.
       </p>
 
-      <button
+      <a
         class="btn"
-        onclick="showMessage('State-wise Jobs selected 📍')">
-
-        Explore
-
-      </button>
+        href="https://www.ncs.gov.in/"
+        target="_blank">
+        Search State Jobs
+      </a>
 
     </div>
 
@@ -837,34 +633,21 @@ footer{
 </section>
 
 
-
-
 <!-- AI TOOLS -->
 
-<section
-  class="section"
-  id="ai">
+<section class="section" id="ai">
 
-  <h2>
-    🤖 AI Tools
-  </h2>
+  <h2>🤖 AI Tools</h2>
 
   <div class="cards">
 
-
     <div class="card">
 
-      <div class="icon">
-        💬
-      </div>
+      <div class="icon">💬</div>
 
-      <h3>
-        ChatGPT
-      </h3>
+      <h3>ChatGPT</h3>
 
-      <div class="tag">
-        AI Assistant
-      </div>
+      <div class="tag">AI Assistant</div>
 
       <p>
         AI assistant for learning, ideas and coding.
@@ -874,9 +657,7 @@ footer{
         class="btn"
         href="https://chatgpt.com/"
         target="_blank">
-
         Open
-
       </a>
 
     </div>
@@ -884,17 +665,11 @@ footer{
 
     <div class="card">
 
-      <div class="icon">
-        🎨
-      </div>
+      <div class="icon">🎨</div>
 
-      <h3>
-        Canva
-      </h3>
+      <h3>Canva</h3>
 
-      <div class="tag">
-        Design
-      </div>
+      <div class="tag">Design</div>
 
       <p>
         Create designs and visual content.
@@ -904,9 +679,7 @@ footer{
         class="btn"
         href="https://www.canva.com/"
         target="_blank">
-
         Open
-
       </a>
 
     </div>
@@ -914,17 +687,11 @@ footer{
 
     <div class="card">
 
-      <div class="icon">
-        🔍
-      </div>
+      <div class="icon">🔍</div>
 
-      <h3>
-        Perplexity
-      </h3>
+      <h3>Perplexity</h3>
 
-      <div class="tag">
-        Research
-      </div>
+      <div class="tag">Research</div>
 
       <p>
         AI-powered search and research assistant.
@@ -934,46 +701,31 @@ footer{
         class="btn"
         href="https://www.perplexity.ai/"
         target="_blank">
-
         Open
-
       </a>
 
     </div>
-
 
   </div>
 
 </section>
 
 
-
 <!-- BUSINESS -->
 
-<section
-  class="section"
-  id="business">
+<section class="section" id="business">
 
-  <h2>
-    🏪 Business Hub
-  </h2>
+  <h2>🏪 Business Hub</h2>
 
   <div class="cards">
 
-
     <div class="card">
 
-      <div class="icon">
-        🐐
-      </div>
+      <div class="icon">🐐</div>
 
-      <h3>
-        Goat Farming
-      </h3>
+      <h3>Goat Farming</h3>
 
-      <div class="tag">
-        Rural Business
-      </div>
+      <div class="tag">Rural Business</div>
 
       <p>
         Explore goat farming business ideas.
@@ -982,9 +734,7 @@ footer{
       <button
         class="btn"
         onclick="showMessage('Goat Farming selected 🚀')">
-
         Explore
-
       </button>
 
     </div>
@@ -992,17 +742,11 @@ footer{
 
     <div class="card">
 
-      <div class="icon">
-        🐄
-      </div>
+      <div class="icon">🐄</div>
 
-      <h3>
-        Dairy Farming
-      </h3>
+      <h3>Dairy Farming</h3>
 
-      <div class="tag">
-        Agriculture
-      </div>
+      <div class="tag">Agriculture</div>
 
       <p>
         Explore dairy and milk business ideas.
@@ -1011,9 +755,7 @@ footer{
       <button
         class="btn"
         onclick="showMessage('Dairy Farming selected 🚀')">
-
         Explore
-
       </button>
 
     </div>
@@ -1021,17 +763,11 @@ footer{
 
     <div class="card">
 
-      <div class="icon">
-        💻
-      </div>
+      <div class="icon">💻</div>
 
-      <h3>
-        Online Business
-      </h3>
+      <h3>Online Business</h3>
 
-      <div class="tag">
-        Digital
-      </div>
+      <div class="tag">Digital</div>
 
       <p>
         Discover beginner-friendly online business ideas.
@@ -1040,46 +776,31 @@ footer{
       <button
         class="btn"
         onclick="showMessage('Online Business selected 🚀')">
-
         Explore
-
       </button>
 
     </div>
-
 
   </div>
 
 </section>
 
 
-
 <!-- SERVICES -->
 
-<section
-  class="section"
-  id="services">
+<section class="section" id="services">
 
-  <h2>
-    🇮🇳 India Services
-  </h2>
+  <h2>🇮🇳 India Services</h2>
 
   <div class="cards">
 
-
     <div class="card">
 
-      <div class="icon">
-        📄
-      </div>
+      <div class="icon">📄</div>
 
-      <h3>
-        Government Documents
-      </h3>
+      <h3>Government Documents</h3>
 
-      <div class="tag">
-        Documents
-      </div>
+      <div class="tag">Documents</div>
 
       <p>
         Find useful information about important documents.
@@ -1088,9 +809,7 @@ footer{
       <button
         class="btn"
         onclick="showMessage('Government Documents selected 🚀')">
-
         Explore
-
       </button>
 
     </div>
@@ -1098,17 +817,11 @@ footer{
 
     <div class="card">
 
-      <div class="icon">
-        🏦
-      </div>
+      <div class="icon">🏦</div>
 
-      <h3>
-        Government Schemes
-      </h3>
+      <h3>Government Schemes</h3>
 
-      <div class="tag">
-        Schemes
-      </div>
+      <div class="tag">Schemes</div>
 
       <p>
         Explore useful government schemes and benefits.
@@ -1117,9 +830,7 @@ footer{
       <button
         class="btn"
         onclick="showMessage('Government Schemes selected 🚀')">
-
         Explore
-
       </button>
 
     </div>
@@ -1127,17 +838,11 @@ footer{
 
     <div class="card">
 
-      <div class="icon">
-        🧾
-      </div>
+      <div class="icon">🧾</div>
 
-      <h3>
-        Public Services
-      </h3>
+      <h3>Public Services</h3>
 
-      <div class="tag">
-        Services
-      </div>
+      <div class="tag">Services</div>
 
       <p>
         Find useful public and online services.
@@ -1146,42 +851,32 @@ footer{
       <button
         class="btn"
         onclick="showMessage('Public Services selected 🚀')">
-
         Explore
-
       </button>
 
     </div>
-
 
   </div>
 
 </section>
 
 
-
 <!-- PROFILE -->
 
-<section
-  class="section"
-  id="profile">
+<section class="section" id="profile">
 
-  <h2>
-    👤 My Profile
-  </h2>
+  <h2>👤 My Profile</h2>
 
   <div class="card">
 
-    <div class="icon">
-      👤
-    </div>
+    <div class="icon">👤</div>
 
     <h3 id="welcomeName">
       Welcome to OneHub
     </h3>
 
     <p>
-      अपना नाम दर्ज करें:
+      आपलं नाव टाका:
     </p>
 
     <input
@@ -1196,9 +891,7 @@ footer{
     <button
       class="btn"
       onclick="saveProfile()">
-
       Save Profile
-
     </button>
 
   </div>
@@ -1206,12 +899,9 @@ footer{
 </section>
 
 
-
 <div id="message"></div>
 
-
 </main>
-
 
 
 <!-- FOOTER -->
@@ -1229,8 +919,7 @@ footer{
 </footer>
 
 
-
-<!-- MOBILE NAVIGATION -->
+<!-- MOBILE NAV -->
 
 <div class="mobile-nav">
 
@@ -1260,7 +949,6 @@ footer{
   </a>
 
 </div>
-
 
 
 <!-- JAVASCRIPT -->
@@ -1310,15 +998,12 @@ function searchHub(){
 
   }
 
-
   let found = false;
-
 
   sections.forEach(function(section){
 
     let text =
       section.innerText.toLowerCase();
-
 
     if(text.includes(search)){
 
@@ -1333,7 +1018,6 @@ function searchHub(){
     }
 
   });
-
 
   if(!found){
 
@@ -1358,7 +1042,6 @@ function saveProfile(){
     .value
     .trim();
 
-
   if(name === ""){
 
     document.getElementById("message").innerHTML =
@@ -1368,18 +1051,15 @@ function saveProfile(){
 
   }
 
-
   localStorage.setItem(
     "oneHubName",
     name
   );
 
-
   document.getElementById(
     "welcomeName"
   ).innerHTML =
     "Welcome, " + name + " 👋";
-
 
   document.getElementById(
     "message"
