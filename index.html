@@ -7,6 +7,8 @@
 <title>OneHub India 🇮🇳</title>
 
 <style>
+
+/* RESET */
 *{
   margin:0;
   padding:0;
@@ -14,21 +16,31 @@
   font-family:Arial,sans-serif;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   background:#f5f7fb;
   color:#111827;
+  padding-bottom:0;
 }
+
+
+/* HEADER */
 
 header{
   background:#111827;
   color:white;
   padding:16px 20px;
+
   display:flex;
   justify-content:space-between;
   align-items:center;
+
   position:sticky;
   top:0;
-  z-index:10;
+  z-index:50;
 }
 
 .logo{
@@ -47,16 +59,27 @@ nav a{
   font-size:14px;
 }
 
+
+/* HERO */
+
 .hero{
   background:linear-gradient(135deg,#111827,#2563eb);
   color:white;
+
   text-align:center;
-  padding:50px 20px;
+  padding:55px 20px;
+
+  min-height:320px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
 }
 
 .hero h1{
   font-size:40px;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 
 .hero p{
@@ -67,12 +90,18 @@ nav a{
 .search{
   width:100%;
   max-width:600px;
+
   padding:16px 20px;
+
   border:0;
   border-radius:30px;
+
   font-size:16px;
   outline:none;
 }
+
+
+/* CONTAINER */
 
 .container{
   max-width:1100px;
@@ -87,25 +116,42 @@ nav a{
 .section h2{
   text-align:center;
   margin-bottom:25px;
+  font-size:28px;
 }
+
+
+/* CARDS */
 
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:
+  repeat(auto-fit,minmax(220px,1fr));
+
   gap:18px;
 }
 
 .card{
   background:white;
+
   padding:25px;
+
   border-radius:18px;
+
   text-align:center;
-  box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+  border:1px solid #e5e7eb;
+
+  box-shadow:
+  0 5px 18px rgba(0,0,0,.08);
+
   transition:.3s;
 }
 
 .card:hover{
-  transform:translateY(-5px);
+  transform:translateY(-6px);
+
+  box-shadow:
+  0 10px 25px rgba(0,0,0,.12);
 }
 
 .icon{
@@ -115,6 +161,7 @@ nav a{
 
 .card h3{
   margin-bottom:8px;
+  font-size:20px;
 }
 
 .card p{
@@ -123,33 +170,64 @@ nav a{
   margin-bottom:16px;
 }
 
+
+/* TAG */
+
 .tag{
   display:inline-block;
+
   background:#eee;
+
   padding:5px 10px;
+
   border-radius:15px;
+
   font-size:12px;
+
   margin-bottom:14px;
 }
 
+
+/* BUTTON */
+
 .btn{
   display:inline-block;
+
   background:#2563eb;
+
   color:white;
+
   border:0;
+
   padding:10px 20px;
+
   border-radius:22px;
+
   cursor:pointer;
+
   text-decoration:none;
+
+  font-weight:bold;
+
+  transition:.2s;
 }
 
 .btn:hover{
   background:#1d4ed8;
 }
 
+.btn:active{
+  transform:scale(.96);
+}
+
+
+/* QUICK LINKS */
+
 .quick{
   margin-top:-20px;
+
   position:relative;
+
   z-index:2;
 }
 
@@ -157,18 +235,23 @@ nav a{
   padding:20px;
 }
 
-.quick a{
-  text-decoration:none;
-  color:#111827;
-}
+
+/* CATEGORIES */
 
 .category-btn{
   background:white;
+
   border:2px solid #e5e7eb;
+
   padding:14px 18px;
+
   border-radius:25px;
+
   cursor:pointer;
+
   font-size:15px;
+
+  transition:.2s;
 }
 
 .category-btn:hover{
@@ -176,19 +259,62 @@ nav a{
   color:white;
 }
 
+
+/* PROFILE */
+
+.profile-input{
+  width:100%;
+
+  max-width:350px;
+
+  padding:12px;
+
+  border:1px solid #ddd;
+
+  border-radius:10px;
+
+  margin:12px 0;
+
+  font-size:16px;
+
+  outline:none;
+}
+
+
+/* MESSAGE */
+
 #message{
   text-align:center;
+
   margin:25px 0;
+
   font-weight:bold;
 }
 
+
+/* FOOTER */
+
 footer{
   background:#111827;
+
   color:white;
+
   text-align:center;
+
   padding:25px;
+
   line-height:1.8;
 }
+
+
+/* MOBILE NAV */
+
+.mobile-nav{
+  display:none;
+}
+
+
+/* MOBILE */
 
 @media(max-width:700px){
 
@@ -196,18 +322,86 @@ footer{
     display:none;
   }
 
+  .hero{
+    padding:45px 15px 35px;
+    min-height:300px;
+  }
+
   .hero h1{
     font-size:32px;
+  }
+
+  .hero p{
+    font-size:15px;
   }
 
   .cards{
     grid-template-columns:1fr;
   }
+
+  .section h2{
+    font-size:24px;
+  }
+
+  .card{
+    padding:22px 18px;
+  }
+
+  .mobile-nav{
+    display:flex;
+
+    position:fixed;
+
+    bottom:0;
+    left:0;
+    right:0;
+
+    height:65px;
+
+    background:#111827;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    z-index:100;
+
+    box-shadow:
+    0 -3px 15px rgba(0,0,0,.2);
+  }
+
+  .mobile-nav a{
+    color:white;
+
+    text-decoration:none;
+
+    text-align:center;
+
+    font-size:20px;
+  }
+
+  .mobile-nav span{
+    display:block;
+
+    font-size:11px;
+
+    margin-top:3px;
+  }
+
+  body{
+    padding-bottom:70px;
+  }
+
 }
+
 </style>
 </head>
 
+
 <body>
+
+
+<!-- HEADER -->
 
 <header>
 
@@ -216,21 +410,35 @@ footer{
   </div>
 
   <nav>
+
     <a href="#home">Home</a>
+
     <a href="#jobs">Jobs</a>
+
     <a href="#ai">AI Tools</a>
+
     <a href="#business">Business</a>
+
     <a href="#services">Services</a>
+
+    <a href="#profile">Profile</a>
+
   </nav>
 
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero" id="home">
 
-  <h1>OneHub India 🇮🇳</h1>
+  <h1>
+    OneHub India 🇮🇳
+  </h1>
 
-  <p>Everything you need, in one place.</p>
+  <p>
+    Everything you need, in one place.
+  </p>
 
   <input
     id="searchBox"
@@ -250,89 +458,194 @@ footer{
 
 <section class="section quick">
 
-  <h2>⚡ Quick Links</h2>
+  <h2>
+    ⚡ Quick Links
+  </h2>
 
   <div class="cards">
 
-    <div class="card">
-      <div class="icon">💼</div>
-      <h3>Jobs</h3>
-      <p>Find job opportunities.</p>
-      <a class="btn" href="#jobs">Open</a>
-    </div>
 
     <div class="card">
-      <div class="icon">🤖</div>
-      <h3>AI Tools</h3>
-      <p>Useful AI tools.</p>
-      <a class="btn" href="#ai">Open</a>
+
+      <div class="icon">
+        💼
+      </div>
+
+      <h3>
+        Jobs
+      </h3>
+
+      <p>
+        Find job opportunities.
+      </p>
+
+      <a
+        class="btn"
+        href="#jobs">
+
+        Open
+
+      </a>
+
     </div>
 
-    <div class="card">
-      <div class="icon">🏪</div>
-      <h3>Business</h3>
-      <p>Business ideas.</p>
-      <a class="btn" href="#business">Open</a>
-    </div>
 
     <div class="card">
-      <div class="icon">🇮🇳</div>
-      <h3>Services</h3>
-      <p>Useful Indian services.</p>
-      <a class="btn" href="#services">Open</a>
+
+      <div class="icon">
+        🤖
+      </div>
+
+      <h3>
+        AI Tools
+      </h3>
+
+      <p>
+        Useful AI tools.
+      </p>
+
+      <a
+        class="btn"
+        href="#ai">
+
+        Open
+
+      </a>
+
     </div>
+
+
+    <div class="card">
+
+      <div class="icon">
+        🏪
+      </div>
+
+      <h3>
+        Business
+      </h3>
+
+      <p>
+        Business ideas.
+      </p>
+
+      <a
+        class="btn"
+        href="#business">
+
+        Open
+
+      </a>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">
+        🇮🇳
+      </div>
+
+      <h3>
+        Services
+      </h3>
+
+      <p>
+        Useful Indian services.
+      </p>
+
+      <a
+        class="btn"
+        href="#services">
+
+        Open
+
+      </a>
+
+    </div>
+
 
   </div>
 
 </section>
+
 
 
 <!-- CATEGORIES -->
 
 <section class="section">
 
-  <h2>📂 Categories</h2>
+  <h2>
+    📂 Categories
+  </h2>
 
   <div class="cards">
 
-    <button class="category-btn"
+
+    <button
+      class="category-btn"
       onclick="goToSection('jobs')">
+
       💼 Jobs
+
     </button>
 
-    <button class="category-btn"
+
+    <button
+      class="category-btn"
       onclick="goToSection('ai')">
+
       🤖 AI Tools
+
     </button>
 
-    <button class="category-btn"
+
+    <button
+      class="category-btn"
       onclick="goToSection('business')">
+
       🏪 Business
+
     </button>
 
-    <button class="category-btn"
+
+    <button
+      class="category-btn"
       onclick="goToSection('services')">
+
       🇮🇳 Services
+
     </button>
+
 
   </div>
 
 </section>
 
 
+
 <!-- JOBS -->
 
-<section class="section" id="jobs">
+<section
+  class="section"
+  id="jobs">
 
-  <h2>💼 Jobs</h2>
+  <h2>
+    💼 Jobs
+  </h2>
 
   <div class="cards">
 
+
     <div class="card">
 
-      <div class="icon">🔧</div>
+      <div class="icon">
+        🔧
+      </div>
 
-      <h3>ITI Fitter</h3>
+      <h3>
+        ITI Fitter
+      </h3>
 
       <div class="tag">
         Manufacturing
@@ -345,7 +658,9 @@ footer{
       <button
         class="btn"
         onclick="showMessage('ITI Fitter selected 🚀')">
+
         View
+
       </button>
 
     </div>
@@ -353,9 +668,13 @@ footer{
 
     <div class="card">
 
-      <div class="icon">🏭</div>
+      <div class="icon">
+        🏭
+      </div>
 
-      <h3>Production Operator</h3>
+      <h3>
+        Production Operator
+      </h3>
 
       <div class="tag">
         Automobile
@@ -368,7 +687,9 @@ footer{
       <button
         class="btn"
         onclick="showMessage('Production Operator selected 🚀')">
+
         View
+
       </button>
 
     </div>
@@ -376,9 +697,13 @@ footer{
 
     <div class="card">
 
-      <div class="icon">⚙️</div>
+      <div class="icon">
+        ⚙️
+      </div>
 
-      <h3>Maintenance Technician</h3>
+      <h3>
+        Maintenance Technician
+      </h3>
 
       <div class="tag">
         Engineering
@@ -391,29 +716,42 @@ footer{
       <button
         class="btn"
         onclick="showMessage('Maintenance Technician selected 🚀')">
+
         View
+
       </button>
 
     </div>
+
 
   </div>
 
 </section>
 
 
+
 <!-- AI TOOLS -->
 
-<section class="section" id="ai">
+<section
+  class="section"
+  id="ai">
 
-  <h2>🤖 AI Tools</h2>
+  <h2>
+    🤖 AI Tools
+  </h2>
 
   <div class="cards">
 
+
     <div class="card">
 
-      <div class="icon">💬</div>
+      <div class="icon">
+        💬
+      </div>
 
-      <h3>ChatGPT</h3>
+      <h3>
+        ChatGPT
+      </h3>
 
       <div class="tag">
         AI Assistant
@@ -427,7 +765,9 @@ footer{
         class="btn"
         href="https://chatgpt.com/"
         target="_blank">
+
         Open
+
       </a>
 
     </div>
@@ -435,9 +775,13 @@ footer{
 
     <div class="card">
 
-      <div class="icon">🎨</div>
+      <div class="icon">
+        🎨
+      </div>
 
-      <h3>Canva</h3>
+      <h3>
+        Canva
+      </h3>
 
       <div class="tag">
         Design
@@ -451,7 +795,9 @@ footer{
         class="btn"
         href="https://www.canva.com/"
         target="_blank">
+
         Open
+
       </a>
 
     </div>
@@ -459,9 +805,13 @@ footer{
 
     <div class="card">
 
-      <div class="icon">🔍</div>
+      <div class="icon">
+        🔍
+      </div>
 
-      <h3>Perplexity</h3>
+      <h3>
+        Perplexity
+      </h3>
 
       <div class="tag">
         Research
@@ -475,29 +825,42 @@ footer{
         class="btn"
         href="https://www.perplexity.ai/"
         target="_blank">
+
         Open
+
       </a>
 
     </div>
+
 
   </div>
 
 </section>
 
 
+
 <!-- BUSINESS -->
 
-<section class="section" id="business">
+<section
+  class="section"
+  id="business">
 
-  <h2>🏪 Business Hub</h2>
+  <h2>
+    🏪 Business Hub
+  </h2>
 
   <div class="cards">
 
+
     <div class="card">
 
-      <div class="icon">🐐</div>
+      <div class="icon">
+        🐐
+      </div>
 
-      <h3>Goat Farming</h3>
+      <h3>
+        Goat Farming
+      </h3>
 
       <div class="tag">
         Rural Business
@@ -510,7 +873,9 @@ footer{
       <button
         class="btn"
         onclick="showMessage('Goat Farming selected 🚀')">
+
         Explore
+
       </button>
 
     </div>
@@ -518,9 +883,13 @@ footer{
 
     <div class="card">
 
-      <div class="icon">🐄</div>
+      <div class="icon">
+        🐄
+      </div>
 
-      <h3>Dairy Farming</h3>
+      <h3>
+        Dairy Farming
+      </h3>
 
       <div class="tag">
         Agriculture
@@ -533,7 +902,9 @@ footer{
       <button
         class="btn"
         onclick="showMessage('Dairy Farming selected 🚀')">
+
         Explore
+
       </button>
 
     </div>
@@ -541,9 +912,13 @@ footer{
 
     <div class="card">
 
-      <div class="icon">💻</div>
+      <div class="icon">
+        💻
+      </div>
 
-      <h3>Online Business</h3>
+      <h3>
+        Online Business
+      </h3>
 
       <div class="tag">
         Digital
@@ -556,29 +931,42 @@ footer{
       <button
         class="btn"
         onclick="showMessage('Online Business selected 🚀')">
+
         Explore
+
       </button>
 
     </div>
+
 
   </div>
 
 </section>
 
 
-<!-- INDIA SERVICES -->
 
-<section class="section" id="services">
+<!-- SERVICES -->
 
-  <h2>🇮🇳 India Services</h2>
+<section
+  class="section"
+  id="services">
+
+  <h2>
+    🇮🇳 India Services
+  </h2>
 
   <div class="cards">
 
+
     <div class="card">
 
-      <div class="icon">📄</div>
+      <div class="icon">
+        📄
+      </div>
 
-      <h3>Government Documents</h3>
+      <h3>
+        Government Documents
+      </h3>
 
       <div class="tag">
         Documents
@@ -591,7 +979,9 @@ footer{
       <button
         class="btn"
         onclick="showMessage('Government Documents selected 🚀')">
+
         Explore
+
       </button>
 
     </div>
@@ -599,9 +989,13 @@ footer{
 
     <div class="card">
 
-      <div class="icon">🏦</div>
+      <div class="icon">
+        🏦
+      </div>
 
-      <h3>Government Schemes</h3>
+      <h3>
+        Government Schemes
+      </h3>
 
       <div class="tag">
         Schemes
@@ -614,7 +1008,9 @@ footer{
       <button
         class="btn"
         onclick="showMessage('Government Schemes selected 🚀')">
+
         Explore
+
       </button>
 
     </div>
@@ -622,9 +1018,13 @@ footer{
 
     <div class="card">
 
-      <div class="icon">🧾</div>
+      <div class="icon">
+        🧾
+      </div>
 
-      <h3>Public Services</h3>
+      <h3>
+        Public Services
+      </h3>
 
       <div class="tag">
         Services
@@ -637,31 +1037,49 @@ footer{
       <button
         class="btn"
         onclick="showMessage('Public Services selected 🚀')">
+
         Explore
+
       </button>
 
     </div>
 
+
   </div>
 
 </section>
-<section class="section" id="profile">
 
-  <h2>👤 My Profile</h2>
+
+
+<!-- PROFILE -->
+
+<section
+  class="section"
+  id="profile">
+
+  <h2>
+    👤 My Profile
+  </h2>
 
   <div class="card">
 
-    <div class="icon">👤</div>
+    <div class="icon">
+      👤
+    </div>
 
-    <h3 id="welcomeName">Welcome to OneHub</h3>
+    <h3 id="welcomeName">
+      Welcome to OneHub
+    </h3>
 
-    <p>आपलं नाव टाका:</p>
+    <p>
+      अपना नाम दर्ज करें:
+    </p>
 
     <input
       id="nameInput"
+      class="profile-input"
       type="text"
       placeholder="Enter your name"
-      style="width:100%;max-width:350px;padding:12px;border:1px solid #ddd;border-radius:10px;margin:12px 0;font-size:16px;"
     >
 
     <br>
@@ -669,22 +1087,81 @@ footer{
     <button
       class="btn"
       onclick="saveProfile()">
+
       Save Profile
+
     </button>
 
   </div>
 
 </section>
 
+
+
 <div id="message"></div>
+
 
 </main>
 
 
+
+<!-- FOOTER -->
+
 <footer>
 
   <p>
-    © 
+    © 2026 OneHub India 🇮🇳
+  </p>
+
+  <p>
+    One Platform • Many Possibilities
+  </p>
+
+</footer>
+
+
+
+<!-- MOBILE NAVIGATION -->
+
+<div class="mobile-nav">
+
+  <a href="#home">
+    🏠
+    <span>Home</span>
+  </a>
+
+  <a href="#jobs">
+    💼
+    <span>Jobs</span>
+  </a>
+
+  <a href="#ai">
+    🤖
+    <span>AI</span>
+  </a>
+
+  <a href="#business">
+    🏪
+    <span>Business</span>
+  </a>
+
+  <a href="#services">
+    🇮🇳
+    <span>Services</span>
+  </a>
+
+</div>
+
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function showMessage(text){
+
+  document.getElementById("message").innerHTML =
+    "✅ " + text;
 
 }
 
@@ -721,6 +1198,7 @@ function searchHub(){
     document.getElementById("message").innerHTML = "";
 
     return;
+
   }
 
 
@@ -761,98 +1239,48 @@ function searchHub(){
   }
 
 }
+
+
 function saveProfile(){
 
-  let name = document.getElementById("nameInput").value.trim();
+  let name =
+    document
+    .getElementById("nameInput")
+    .value
+    .trim();
+
 
   if(name === ""){
+
     document.getElementById("message").innerHTML =
       "⚠️ Please enter your name.";
+
     return;
+
   }
 
-  localStorage.setItem("oneHubName", name);
 
-  document.getElementById("welcomeName").innerHTML =
+  localStorage.setItem(
+    "oneHubName",
+    name
+  );
+
+
+  document.getElementById(
+    "welcomeName"
+  ).innerHTML =
     "Welcome, " + name + " 👋";
 
-  document.getElementById("message").innerHTML =
+
+  document.getElementById(
+    "message"
+  ).innerHTML =
     "✅ Profile saved successfully!";
+
 }
+
 </script>
-<div class="mobile-nav">
-  <a href="#home">🏠<span>Home</span></a>
-  <a href="#jobs">💼<span>Jobs</span></a>
-  <a href="#ai">🤖<span>AI</span></a>
-  <a href="#business">🏪<span>Business</span></a>
-  <a href="#services">🇮🇳<span>Services</span></a>
-</div>
 
-<style>
-.mobile-nav{
-  display:none;
-}
-
-@media(max-width:700px){
-  .mobile-nav{
-    display:flex;
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    height:65px;
-    background:#111827;
-    justify-content:space-around;
-    align-items:center;
-    z-index:100;
-    box-shadow:0 -3px 15px rgba(0,0,0,.2);
-  }
-
-  .mobile-nav a{
-    color:white;
-    text-decoration:none;
-    text-align:center;
-    font-size:20px;
-  }
-
-  .mobile-nav span{
-    display:block;
-    font-size:11px;
-    margin-top:3px;
-  }
-
-  body{
-    padding-bottom:70px;
-  }
-/* Professional OneHub */
-
-.card{
-  border:1px solid #e5e7eb;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 10px 25px rgba(0,0,0,.12);
-}
-
-.btn{
-  font-weight:bold;
-  transition:0.2s;
-}
-
-.btn:active{
-  transform:scale(.96);
-}
-
-.hero{
-  min-height:300px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-}
-</style>
 
 </body>
 </html>
