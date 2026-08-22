@@ -749,7 +749,52 @@ function searchHub(){
 }
 
 </script>
+<div class="mobile-nav">
+  <a href="#home">🏠<span>Home</span></a>
+  <a href="#jobs">💼<span>Jobs</span></a>
+  <a href="#ai">🤖<span>AI</span></a>
+  <a href="#business">🏪<span>Business</span></a>
+  <a href="#services">🇮🇳<span>Services</span></a>
+</div>
 
+<style>
+.mobile-nav{
+  display:none;
+}
+
+@media(max-width:700px){
+  .mobile-nav{
+    display:flex;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    height:65px;
+    background:#111827;
+    justify-content:space-around;
+    align-items:center;
+    z-index:100;
+    box-shadow:0 -3px 15px rgba(0,0,0,.2);
+  }
+
+  .mobile-nav a{
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    font-size:20px;
+  }
+
+  .mobile-nav span{
+    display:block;
+    font-size:11px;
+    margin-top:3px;
+  }
+
+  body{
+    padding-bottom:70px;
+  }
+}
+</style>
 
 </body>
 </html>
