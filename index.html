@@ -1625,67 +1625,116 @@ window.onload = function(){
     ).value =
       savedName;
 
-  }
+   BUSINESS HUB 
 
-};
-function showBusiness(type){
+<section class="section" id="business">
 
-  let data = {
-    goat: "🐐 Goat Farming — setup, feeding आणि basic business planning.",
-    dairy: "🐄 Dairy Farming — cattle care, milk business आणि planning.",
-    agriculture: "🌾 Agriculture — farming आणि rural business ideas.",
-    online: "💻 Online Business — beginner-friendly digital business ideas."
-  };
+  <h2>🏪 Business Hub</h2>
 
-  document.getElementById("message").innerHTML =
-    "🚀 " + data[type];
+  <p class="section-subtitle">
+    Explore business ideas and opportunities.
+  </p>
 
-  document.getElementById("message").scrollIntoView({
-    behavior:"smooth"
-  });
-}
-function openBusiness(type){
+  <div class="cards">
 
-  let title = "";
-  let text = "";
+    <div class="card">
+      <div class="icon">🐐</div>
+      <h3>Goat Farming</h3>
+      <div class="tag">Rural Business</div>
 
-  if(type === "goat"){
-    title = "🐐 Goat Farming";
-    text = "Goat farming business मध्ये breed selection, feeding, housing, health care आणि market planning महत्त्वाचे आहेत.";
-  }
+      <p>
+        Learn basic goat farming business information.
+      </p>
 
-  if(type === "dairy"){
-    title = "🐄 Dairy Farming";
-    text = "Dairy business मध्ये cattle care, feeding, milk production, hygiene आणि market planning महत्त्वाचे आहेत.";
-  }
-
-  if(type === "agriculture"){
-    title = "🌾 Agriculture Business";
-    text = "Agriculture business मध्ये योग्य crop selection, farming planning, water management आणि market research महत्त्वाचे आहेत.";
-  }
-
-  if(type === "online"){
-    title = "💻 Online Business";
-    text = "Online business मध्ये digital services, content creation, freelancing आणि e-commerce सारख्या कल्पना explore करता येतात.";
-  }
-
-  document.getElementById("message").innerHTML =
-    "<div style='background:white;padding:25px;border-radius:18px;max-width:700px;margin:20px auto;box-shadow:0 5px 18px rgba(0,0,0,.08)'>" +
-    "<h2>" + title + "</h2>" +
-    "<p style='margin-top:12px;color:#666;line-height:1.6'>" +
-    text +
-    "</p>" +
-    "</div>";
-
-  document.getElementById("message").scrollIntoView({
-    behavior:"smooth"
-  });
-
-}
-</script>
+      <button class="btn"
+        onclick="businessDetails(
+        '🐐 Goat Farming',
+        'Goat farming मध्ये breed selection, feeding, housing, health care आणि market planning महत्त्वाचे आहेत.'
+        )">
+        Explore
+      </button>
+    </div>
 
 
-</body>
+    <div class="card">
+      <div class="icon">🐄</div>
+      <h3>Dairy Farming</h3>
+      <div class="tag">Agriculture</div>
 
-</html>
+      <p>
+        Explore basic dairy farming information.
+      </p>
 
+      <button class="btn"
+        onclick="businessDetails(
+        '🐄 Dairy Farming',
+        'Dairy farming मध्ये cattle care, feeding, milk production, hygiene आणि market planning महत्त्वाचे आहेत.'
+        )">
+        Explore
+      </button>
+    </div>
+
+
+    <div class="card">
+      <div class="icon">🌾</div>
+      <h3>Agriculture</h3>
+      <div class="tag">Farming</div>
+
+      <p>
+        Explore agriculture business ideas.
+      </p>
+
+      <button class="btn"
+        onclick="businessDetails(
+        '🌾 Agriculture Business',
+        'Agriculture business मध्ये crop selection, farming planning, water management आणि market research महत्त्वाचे आहेत.'
+        )">
+        Explore
+      </button>
+    </div>
+
+
+    <div class="card">
+      <div class="icon">💻</div>
+      <h3>Online Business</h3>
+      <div class="tag">Digital</div>
+
+      <p>
+        Explore beginner-friendly online business ideas.
+      </p>
+
+      <button class="btn"
+        onclick="businessDetails(
+        '💻 Online Business',
+        'Online business मध्ये digital services, content creation, freelancing आणि e-commerce सारख्या कल्पना आहेत.'
+        )">
+        Explore
+      </button>
+    </div>
+
+  </div>
+
+  <!-- BUSINESS DETAILS -->
+
+  <div id="businessDetails"
+       style="display:none;
+       margin-top:30px;">
+
+    <div class="card">
+
+      <div class="icon">🚀</div>
+
+      <h3 id="businessTitle"></h3>
+
+      <p id="businessText"></p>
+
+      <button class="btn"
+        onclick="closeBusiness()">
+        ← Back
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
